@@ -1,0 +1,14 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Optional: ignore backups or temp files you create locally
+*.bak
+*.swp
+*.swo
+*~
+
+# Ignore machine-specific secrets or credentials if you add them here by mistake
+*.key
+*.pem
+*.env
