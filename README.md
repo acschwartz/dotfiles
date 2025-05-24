@@ -20,6 +20,8 @@ This repo organizes all my shell and tool configuration in a modular way, making
 
 ## Instructions
 
+All instructions assume repo lives in `~/dev/`.
+
 ### 📦 Structure
 
 Each subfolder is a “package” managed by `stow`.
