@@ -4,9 +4,8 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
 This repo organizes all my shell and tool configuration in a modular way, making it easy to symlink into place and keep version-controlled across machines.
 
----
 
-## 📝 To-Do
+## 📝 TODO:
 
 - [ ] `zsh`
 - [ ] `git`
@@ -16,8 +15,6 @@ This repo organizes all my shell and tool configuration in a modular way, making
 - [ ] VS Code (settings, extensions, keybindings)  
 - [ ] AWS CLI config ?
 - [ ] Figure out what to do with useful scripts — keep here or separate repo?
-
-Feel free to add more as you discover new tools or configs you want tracked.
 
 ---
 
