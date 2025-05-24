@@ -6,20 +6,6 @@ This repo organizes all my shell and tool configuration in a modular way, making
 
 ---
 
-## 📦 Structure
-
-Each subfolder is a “package” managed by `stow`.
-For *example*:
-
-```
-├── git/          → ~/.gitconfig
-├── nvim/         → ~/.config/nvim/init.lua
-├── zsh/          → ~/.zshrc, ~/.zprofile
-```
-
----
-
-
 ## 📝 To-Do
 
 - [ ] `zsh`
@@ -36,6 +22,19 @@ Feel free to add more as you discover new tools or configs you want tracked.
 ---
 
 ## Instructions
+
+### 📦 Structure
+
+Each subfolder is a “package” managed by `stow`.
+For *example*:
+
+```
+├── git/          → ~/.gitconfig
+├── nvim/         → ~/.config/nvim/init.lua
+├── zsh/          → ~/.zshrc, ~/.zprofile
+```
+
+---
 
 ### 🚀🔗 Installing from Repo
 
