@@ -19,12 +19,16 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/manu
 
 - [x] 🐙 `git`
 - [ ] 🐚 `zsh`
-- [ ] 🎭 shell aliases 
+    - [ ] basics: `.zprofile`, `.zshrc`
+    - [ ] link disparate files in `zsh/` to `.zshrc`
+- [ ] 🎭 shell [aliases](https://github.com/driesvints/dotfiles?tab=readme-ov-file#your-own-dotfiles) 
+    - [ ] create `zsh/.zsh_aliases`
+    - [ ] fill it in 
 - [ ] 🍺 `brew` (Homebrew packages (?) and `Brewfile`)  
 - [ ] 🐍 Python (`pip` configs, `virtualenvwrapper`, etc.)  
 - [ ] 📜 Useful Scripts
-- [ ] `~/.stow-local-ignore`
-    - To ignore specific files when symlinking (e.g., README files or notes to self), use a `.stow-local-ignore` file in the package folder.
+- [x] `~/.stow-local-ignore`
+    - to ignore specific files when symlinking (e.g., README files or notes to self), use a `.stow-local-ignore` file in the **package** folder.
 
 
 ---
