@@ -1,0 +1,45 @@
+# WIP
+
+# Use inspo!! Read: https://github.com/driesvints/dotfiles/blob/main/aliases.zsh 
+
+# To check what aliases you already have:
+# alias
+
+# How to figure out where tf your zsh aliases are defined
+# (e.g. by zsh plugins)
+# zsh -ixc : -o sourcetrace 2>&1 | grep -w alias
+
+
+# Shortcuts
+alias l1="ls -1"
+
+# Directories
+alias ic="cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs; ls -1"
+alias dev="cd $HOME/dev; ls -1"
+alias dotfiles="cd $HOME/dev/dotfiles; ls -1"
+
+alias para="echo $'\nPARA System'; cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs/PARA; ls -1; echo '' "
+
+alias para-p="para; 
+cd 1\ \ 🎯\ Projects\ \ \[short-term\]/ ; 
+echo $'\nProjects\n' ; 
+ls -1 ;
+echo $'\n' "
+
+alias para-a="para; 
+cd 2\ 🌱\ Areas\ \ \ \ \[ongoing\ responsibility\]/ ; 
+echo $'\nAreas of Resonsibility\n' ;
+ls -1 ;
+echo $'\n' "
+
+alias para-r="para; 
+cd 3\ 📚\ Resources\ \ \ \ \[topics,\ interests,\ hobbies\]/ ; 
+echo $'\nResources\n' ;
+ls -1 ;
+echo $'\n' "
+
+alias para-aa="para;
+cd 4\ 🗄️\ Archive/ ;
+echo $'\nArchive\n' ;
+ls -1 ;
+echo $'\n' "

@@ -41,7 +41,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -91,8 +91,13 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# ------------------------------------------------
+#       Aliases
+# ------------------------------------------------
+# Set personal aliases, OVERRIDING those provided by Oh My Zsh libs,
+# plugins, and themes. 
+
+# Aliases can be placed here, though Oh My Zsh
 # users are encouraged to define aliases within a top-level file in
 # the $ZSH_CUSTOM folder, with .zsh extension. Examples:
 # - $ZSH_CUSTOM/aliases.zsh
@@ -103,12 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# !!!! todo
-# todo - set up $ZSH_CUSTOM/aliases.zsh -- i'm assuming it requires some kind of setup
 
-# alias icloud="$HOME/Library/Mobile\ Documents/com~apple~CloudDocs && ls"
-alias ic="$HOME/Library/Mobile\ Documents/com~apple~CloudDocs && ls"
-alias para="echo '' && echo 'PARA System' && $HOME/Library/Mobile\ Documents/com~apple~CloudDocs/PARA && ls && echo '' "
-alias para-p="echo '' && echo 'P: Projects' && cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs/PARA && cd 1\ \ 🎯\ Projects\ \ \[short-term\]/ && ls && echo '' "
-alias para-a="echo '' && echo 'A: Areas of Responsibility' && cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs/PARA && cd 2\ 🌱\ Areas\ \ \ \ \[ongoing\ responsibility\]/ && ls && echo '' "
-alias para-r="echo '' && echo 'R: Resources' && cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs/PARA && cd 3\ 📚\ Resources\ \ \ \ \[topics,\ interests,\ hobbies\]/ && ls && echo '' "
+if [ -f ~/.alias ]; then
+    source ~/.alias
+fi
