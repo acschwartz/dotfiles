@@ -32,11 +32,11 @@
 #   - adds Homebrew’s binary directory to PATH
 #   - sets up Homebrew's env vars & makes them available to your shell
 #      - e.g. HOMEBREW_PREFIX, HOMEBREW_CELLAR, HOMEBREW_REPOSITORY
-# Ensures `brew` and other installed tools are available in the terminal
+# Ensures `brew` and software installed through it available
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-## 👾 VSCode (code)
-# Add the Visual Studio Code (code) CLI to the PATH
+## 🧬 VSCode (code)
+# Add the Visual Studio Code (code) CLI binary to $PATH
 # This lets you launch VS Code from the terminal using the `code` command
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
