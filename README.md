@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
+Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html).
 
 ## 📖 Table of Contents
 
@@ -11,7 +11,7 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
   - [📖 Basic Stow Commands](#-basic-stow-commands)
   - [⚙️ .stowrc Defaults](#️-stowrc-defaults)
 - [🤯 Troubleshooting](#-troubleshooting)
-- [✨ Appendix: Inspiration](#-appendix--inspiration)
+- [✨ Appendix: Inspiration](#-appendix-inspiration)
 
 ---
 
@@ -81,7 +81,7 @@ stow zsh
 
 ## 📎 Details
 
-🧰 **[GNU Stow](https://www.gnu.org/software/stow/manual/stow.html)** is a symlink manager — it helps you manage your dotfiles by creating symbolic links from files in this repo to your home directory.
+🧰 [**GNU Stow**](https://www.gnu.org/software/stow/manual/stow.html) is a symlink manager — it helps you manage your [**dotfiles**](https://webpro.nl/articles/getting-started-with-dotfiles) by creating symbolic links from files in this repo to your home directory.
 
 Instead of manually symlinking each config file, you organize your dotfiles into folders (called “packages”), and run `stow <folder>` to auto-link all contents into place.
 

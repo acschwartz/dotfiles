@@ -88,7 +88,7 @@ Anything under `~/.config/` is usually fair game for versioning if you use CLI t
 
 ### 🍎 macOS Power Users
 - [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles) – Legendary repo, tons of macOS tweaks and shell customizations.
-- [driesvints/dotfiles](https://github.com/driesvints/dotfiles) – Laravel core team member, great macOS dev stack setup.
+- [🍏 driesvints/dotfiles](https://github.com/driesvints/dotfiles) – Laravel core team member, great macOS dev stack setup.
 - [paulirish/dotfiles](https://github.com/paulirish/dotfiles) – Front-end-focused but full of shell and Git enhancements.
 
 ### 🛠️ DevOps / Terminal Power Tools
@@ -97,11 +97,7 @@ Anything under `~/.config/` is usually fair game for versioning if you use CLI t
 - [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles) – Ruby/devops shop, tmux + vim + shell tuned for productivity.
 
 ### 🐍 Python Developers
-- [kennethreitz/dotfiles](https://github.com/kennethreitz/dotfiles) – Creator of `requests`; opinionated setup with Python, zsh, and macOS tools.
-- [seatgeek/devtools](https://github.com/seatgeek/devtools) – Pythonic environment for teams, includes pyenv, pipx, poetry, etc.
-- [jakewies/dotfiles](https://github.com/jakewies/dotfiles) – Python dev + Mac user; uses zsh, pyenv, neovim.
-- [cjbarber/dotfiles](https://github.com/cjbarber/dotfiles) – Includes good Python shell/virtualenv helpers and dev automation.
-- [TheMrIncompetent/dotfiles](https://github.com/TheMrIncompetent/dotfiles) – Uses fish shell, pyenv, and poetry with Python-focused aliases.
+- [kdeldycke/dotfiles](https://github.com/kdeldycke/dotfiles) – macOS dotfiles optimized for Python developers using Neovim and VSCode. ★1.1k
 
 ### 🎁 Bonus: Starter Template Generators
 - [dotbot](https://github.com/anishathalye/dotbot) – Tool for bootstrapping and managing dotfiles cleanly across machines.
