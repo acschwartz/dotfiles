@@ -1,13 +1,22 @@
 # =====================================================================
-#  🎭  Annie's Aliases
+# =                    🎭  Annie's Aliases                            =
 # =====================================================================
-
 # 🚧 WIP
+# To Read: https://github.com/driesvints/dotfiles/blob/main/aliases.zsh 
 
-# Use inspo!!
-# Read: https://github.com/driesvints/dotfiles/blob/main/aliases.zsh 
-# See TODO at bottom
+# =====================================================================
+# =                          ❗️ TODO                                  =
+# =====================================================================
+# Oh My Zsh users are encouraged to define aliases within 
+# a top-level file in the $ZSH_CUSTOM folder, with .zsh extension.
 
+# Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
+# _____________________________________________________________________
+
+# =====================================================================
+# =                          Aliases                                  =
 # =====================================================================
 
 ## OMZ Examples
@@ -57,18 +66,8 @@ echo $'\n' "
 
 
 # =====================================================================
-## ❗️ TODO
-# ---------------------------------------------------------------------
-# Oh My Zsh users are encouraged to define aliases within 
-# a top-level file in the $ZSH_CUSTOM folder, with .zsh extension.
-
-# Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-
+# =             🧠 Alias Debugging & Inspection Tips                  =
 # =====================================================================
-## 🧠 Zsh Alias Debugging & Inspection Tips
-# ---------------------------------------------------------------------
 # ➡️ To list all currently defined aliases (if using Oh My Zsh):
 #   alias
 
@@ -82,4 +81,4 @@ echo $'\n' "
 # Examples:
 #   which reload    → not found (safe to use)
 #   type reload     → alias (already defined)
-# =====================================================================
+# _____________________________________________________________________

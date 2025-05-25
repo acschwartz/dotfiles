@@ -1,15 +1,16 @@
-# =====================================================================
-#  🚀  Zsh Profile (.zprofile - Login Shell Config)
-# ----------------------------------------------------------------------
 
-# ---------------------- 🧠 Notes --------------------------------------
+# =====================================================================
+# =        🪄 Zsh Profile   (.zprofile - Login Shell Config)          =
+# =====================================================================
+
+# ====================== 🧠 Notes ======================================
 # .zprofile     run once at login
 # .zshrc        run every time you open a new tab/window
 
 # On macOS, Terminal apps launch your shell as a login shell by default
 # which means both .zprofile and .zshrc run.
+# _____________________________________________________________________
 
-# ---------------------------------------------------------------------
 ## .zprofile (login shell config):
 #   Used for setting environment variables that need to be initialized
 #   once per login session.
@@ -23,7 +24,7 @@
 #     - These settings affect all shells and GUI apps launched after login.
 #     - Loaded once when you log in,
 #       e.g., opening Terminal app, logging in via SSH.
-# =====================================================================
+# _____________________________________________________________________
 
 
 ## 🍺 Homebrew (brew)
@@ -39,3 +40,4 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # This lets you launch VS Code from the terminal using the `code` command
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
+# _____________________________________________________________________

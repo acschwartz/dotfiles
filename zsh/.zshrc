@@ -1,18 +1,19 @@
 # =====================================================================
-#  🚀  Zsh Run Commands (.zshrc - Interactive Shell Config)
-# ---------------------------------------------------------------------
+# =    🚀 Zsh Run Commands   (.zshrc - Interactive Shell Config)      =
+# =====================================================================
+
 # This is an edit of the stock Oh-My-Zsh rc to make it more readable.
 #  I've left in all of the OMZ instructional comments for reference,
 #  plus added additional clarifying comments.
 
-# ---------------------- 🧠 Notes --------------------------------------
+# ====================== 🧠 Notes ======================================
 # .zprofile     run once at login
 # .zshrc        run every time you open a new tab/window
 
 # On macOS, Terminal apps launch your shell as a login shell by default
 # which means both .zprofile and .zshrc run.
+#  ____________________________________________________________________
 
-# ---------------------------------------------------------------------
 ## .zshrc (interactive shell config):
 #  Used for settings that you want to apply every time
 #  a new interactive shell starts (each new Terminal tab or window).
@@ -25,22 +26,21 @@
 #     - Exported vars: environment variables you want to set or override
 #       ONLY for interactive shells — like EDITOR=vim or LANG=en_US.UTF-8.
 #     - Other shell tweaks, prompt customization, plugin loading.
-# ---------------------------------------------------------------------
+# _____________________________________________________________________
 
 
 # =====================================================================
-#   🐚  Zsh Core Environment
+# =                 🐚  Zsh Core Environment                          =
 # =====================================================================
 # This env var contains the path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 
-
 # =====================================================================
-#   🔮  Oh My Zsh Configs
+# =                   🔮  Oh My Zsh Configs                           =
 # =====================================================================
 
-# ---------------------- 🌈 Theme --------------------------------------
+# ====================== 🌈 Theme ======================================
 # 📁 Official themes:       $ZSH/themes/
 # 📁 Custom user themes:    $ZSH_CUSTOM/themes/
 
@@ -62,7 +62,7 @@ ZSH_THEME="robbyrussell"
 #   - If set to an empty array, this variable will have no effect.
 
 
-# ---------------------- 💫 Plugins ------------------------------------
+# ====================== 💫 Plugins ====================================
 # 📁 Official plugins:          $ZSH/plugins/
 # 📁 Custom user plugins:       $ZSH_CUSTOM/plugins/
 
@@ -71,7 +71,7 @@ plugins=(git)
 #  - (!) Add wisely, as too many plugins slow down shell startup.
 
 
-# -------------------- 📁 Custom Folder Path ---------------------------
+# ==================== 📁 Custom Folder Path ===========================
 # - Oh My Zsh updates overwrite files in $ZSH (official plugins/themes).
 # - Your custom plugins/themes in $ZSH_CUSTOM are kept safe and never overwritten.
 # - Use $ZSH_CUSTOM to add or modify plugins and themes without losing changes.
@@ -80,7 +80,7 @@ plugins=(git)
 #   - defaults to $ZSH/custom if not set
 
 
-# --------------------- 🔎 Completion Behavior -------------------------
+# ===================== 🔎 Completion Settings =========================
 # CASE_SENSITIVE="true"
 #   - Uncomment to use case-sensitive completion.
 
@@ -88,8 +88,15 @@ plugins=(git)
 #   - Uncomment to use hyphen-insensitive completion.
 #   - Case-sensitive completion must be off. _ and - will be interchangeable.
 
+# COMPLETION_WAITING_DOTS="true"
+#   - Uncomment to display red dots whilst waiting for completion.
+#   - You can also set it to another string to have that shown, 
+#     instead of the default red dots, e.g.
+#       COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 
-# --------------------- 🔄 Auto-Update Settings ------------------------
+
+# ====================- 🔄 Auto-Update Settings ========================
 # Uncomment one of the following lines to change the auto-update behavior:
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
@@ -99,7 +106,7 @@ plugins=(git)
 # zstyle ':omz:update' frequency 13
 
 
-# -------------------- 🧙 Shell Behavior Tweaks ------------------------
+# ==================== 🧙 Shell Behavior Tweaks ========================
 # DISABLE_MAGIC_FUNCTIONS="true"
 #   - Uncomment if 'pasting URLs and other text is messed up'.
 
@@ -114,24 +121,13 @@ plugins=(git)
 #   - Tried 05/2025. Did not like it.
 
 
-# ------------------- 👀 Visual Feedback Options -----------------------
-# COMPLETION_WAITING_DOTS="true"
-#   - Uncomment to display red dots whilst waiting for completion.
-#   - You can also set it to another string to have that shown, 
-#     instead of the default red dots, e.g.
-#       COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-
-
-
-
-# ---------- 🐢 Git Performance Optimization for Large Repos -----------
+# ========== 🐢 Git Performance Optimization for Large Repos ===========
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 #   - Uncomment if you want to disable marking untracked files under VCS as dirty. 
 #   - This makes repository status check for large repositories much, much faster.
 
 
-# -------------------- ⌛️ History Timestamp Format ---------------------
+# ==================== ⌛️ History Timestamp Format ====================
 # HIST_STAMPS="mm/dd/yyyy"
 #   - Uncomment if you want to change the command execution time stamp
 #     shown in the history command output.
@@ -141,17 +137,15 @@ plugins=(git)
 #     see 'man strftime' for details.
 
 
-
 # =====================================================================
-#  🚀  Initialize Oh My Zsh !
+# =                 🚀  Initialize Oh My Zsh !                        =
 # =====================================================================
 # Starts Oh My Zsh — applies theme, plugins, and settings
 source $ZSH/oh-my-zsh.sh
 
 
-
 # =====================================================================
-#  🦄  User Config
+# =                    🦄  User Configs                               =
 # =====================================================================
 # This is where you add your own settings.
 # You’re encouraged to define:
@@ -164,7 +158,7 @@ source $ZSH/oh-my-zsh.sh
 # 	•	Local tweaks and personal additions
 # =====================================================================
 
-# --------------------- 🎭 Personal Aliases ----------------------------
+# ====================- 🎭 Personal Aliases ============================
 # ⚠️ Personal aliases OVERRIDE those provided by
 #    Oh My Zsh libs, plugins, and themes!
 
@@ -181,7 +175,7 @@ source ~/.aliases
 # (which itself is an alias set by OMZ)
 
 
-# --------------------- 🌀 Other Stuff ---------------------------------
+# ===================== 🌀 Other Stuff =================================
 ## 🌐 Environment Vars
 # On modern systems (like macOS with Homebrew), man usually finds everything it needs automatically.
 # export MANPATH="/usr/local/man:$MANPATH"      # Manual setup of `man` command
@@ -198,3 +192,14 @@ source ~/.aliases
 
 ## 🧱 Compilation Flags
 # export ARCHFLAGS="-arch $(uname -m)"
+
+
+
+# ======================== Templates ==================================
+## Section header, divider templates
+
+# =====================================================================
+# =                                                                   =
+# =====================================================================
+
+# _____________________________________________________________________
