@@ -11,18 +11,18 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
   - [📖 Basic Stow Commands](#-basic-stow-commands)
   - [⚙️ .stowrc Defaults](#️-stowrc-defaults)
 - [🤯 Troubleshooting](#-troubleshooting)
-- [Appendix: 💾 Commonly Backed-Up Dotfiles & Configs](#appendix-commonly-backed-up-dotfiles--configs)
+- [Appendix: 💾 Commonly Backed-Up Dotfiles & Configs](#appendix--commonly-backed-up-dotfiles--configs)
 
 ---
 
 ## 📝 TODO
 
-- ✅ `git`
-- [ ] `zsh`
-- [ ] Backup shell aliases 
-- [ ] `brew` (Homebrew packages (?) and `Brewfile`)  
-- [ ] Python (`pip` configs, `virtualenvwrapper`, etc.)  
-- [ ] Useful Scripts: keep here or move to a separate repo?
+- [✅] 🌱 `git`
+- [ ] 🐚 `zsh`
+- [ ] 🎭 shell aliases 
+- [ ] 🍺 `brew` (Homebrew packages (?) and `Brewfile`)  
+- [ ] 🐍 Python (`pip` configs, `virtualenvwrapper`, etc.)  
+- [ ] 📜 Useful Scripts
 - [ ] `~/.stow-local-ignore`
     - To ignore specific files when symlinking (e.g., README files or notes to self), use a `.stow-local-ignore` file in the package folder.
 
@@ -121,11 +121,9 @@ This repo includes a `.stowrc` file to define default flags for every Stow comma
 ```
 
 #### 🛑 MacOS Note
-Due to System Integrity Protection (SIP), Stow may silently fail to link some files (like ~/.zshrc) without any error message — ***even with maximum verbosity***. 
-
-The explicitly set `--target=~` is to prevent this failure. See 'Troubleshooting' for further detail.
-
-⚠️ Despite the working fix, because failures happen silently, always **verify** that symlinks were created correctly!
+* Due to System Integrity Protection (SIP), Stow may silently fail to link some files (like ~/.zshrc) without any error message — ⚠️ ***even with maximum verbosity***. 
+    * The explicitly set `--target=~` is to prevent this failure. See 'Troubleshooting' for further detail.
+* ⚠️ Despite the working fix, because failures happen silently, always **verify** that symlinks were created correctly!
 
 
 ---
@@ -135,21 +133,21 @@ The explicitly set `--target=~` is to prevent this failure. See 'Troubleshooting
 
 ### Overview
 
-😱 **Problem**
+**Problem**
 * ❌ On macOS, `stow` appeared to work on dotfiles, but actually failed to create a symlink
 
-🩺 **Diagnosis**
+**Diagnosis**
 * 👉 System Integrity Protection (SIP) was preventing the operation
 
-✅ **Solution**
+**Solution**
 * ❗️ Must explicitly set `--target=~` to bypass SIP when linking SIP-protected files
     * Even though `stow whatever` defaults to home folder as target, SIP blocks it.
     * Setting the target *explicitly* is the fix.
-* Created `.stowrc` and added `--target=~` so you don’t have to type it every time
+* ✅ Created `.stowrc` and added `--target=~` so you don’t have to type it every time
 
 #### Note
 * ⚠️ Stow fails silently when SIP blocks it — verbosity has no effect.
-* Stow works as expected with normal files, even when the target the home folder (tested & confirmed). It's specifically dotfiles/configs that are protected by the operating system.
+* Stow works *as expected* with most files, even when the target the home folder (tested & confirmed). It's specifically dotfiles/configs that are protected by the operating system in this case.
 
 ### Troubleshooting Detail
 
