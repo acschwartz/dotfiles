@@ -10,26 +10,34 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
 Instead of manually symlinking each config file, you organize your dotfiles into folders (called “packages”), and run stow <folder> to auto-link all contents into place.
 
+
+### 📦 Packages
+
+Each folder in the repo is a stow package.
+
 For example:
+
 ```zsh
-~/dev/dotfiles/git/.gitconfig → ~/.gitconfig
-~/dev/dotfiles/zsh/.zshrc     → ~/.zshrc
+git/    → ~/.gitconfig  
+zsh/    → ~/.zshrc, ~/.zprofile  
+nvim/   → ~/.config/nvim/init.lua  
 ```
+
 
 ### 📖 Basic Stow Commands
 Run them **from the top level** of the dotfiles repo.
-```
-stow <folder>         # Link all files in <folder> to target dir (defaults to $HOME)
-stow -D <folder>      # Unlink (i.e., "delete") the symlinks for <folder>
-stow -n <folder>      # Preview what stow *would* do (no changes made)
-stow -v <folder>      # Increase verbosity by 1 level (add multiple -v’s for more detail, e.g. -vv)
+```zsh
+stow <folder>        # 🔗 Link all files in <folder> to target dir (defaults to $HOME)
+stow -D <folder>     # ⛓️‍💥 Unlink (i.e., "delete") the symlinks for <folder>
+stow -n <folder>     # Preview what stow *would* do (no changes made)
+stow -v <folder>     # Verbose output (use -vv, -vvv for more detail)
 ```
 
 ### ⚙️ `.stowrc` Defaults
 This repo includes a `.stowrc` file to define default flags for every Stow command:
 ```zsh
---target=~            # Normally optional, but required in our use case due to macOS SIP
---verbose=1           # Default set for minimal feedback, since stow’s default (0) gives no output at all
+--target=~     # Normally optional, but required in my case due to macOS SIP
+--verbose=1    # Enables minimal output (Stow default is silent)
 ```
 
 #### 🛑 MacOS Note
@@ -39,114 +47,58 @@ The explicitly set `--target=~` is to prevent this failure. See 'Troubleshooting
 
 
 ---
+
+
 ## ℹ️ Instructions
 
-All instructions assume repo lives in `~/dev/`.
-
-### 📦 Structure
-
-Each subfolder is a “package” managed by `stow`.
-
-For *example*:
-
-```
-├── git/          → ~/.gitconfig
-├── nvim/         → ~/.config/nvim/init.lua
-├── zsh/          → ~/.zshrc, ~/.zprofile
-```
-
----
-
-### 💻 New machine - initial bootstrap
-
-On a new machine, you must first install `homebrew`, then `stow`.
-
-MacOS does not ship with `stow` out of the box.
-
-```zsh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install stow
-```
+Prerequisites:
+* Stow installed (`brew install stow`)
+* Repo cloned to `~/dev/dotfiles`
 
 
-### 🚀🔗 Installing from repo
-*After setup, your local dotfiles will be symlinked to the contents of this repo.*
-
-1. Clone repo
-```zsh
-git clone git@github.com:username/dotfiles.git ~/dev/dotfiles
-```
-
-2. (section deleted)
-
-3. Use `stow` to create the symlinks
+### 🚀🔗 Symlink Dotfiles
 
 ```zsh
 cd ~/dev/dotfiles
-stow folder1 folder2 folder3
+stow <pkg1> <pkg2> <pkg3>
+stow zsh git nvim  # Example
 ```
 
-e.g. `stow git zsh nvim`
+#### Conflicts
 
-Make sure you are working from the repo's top level.
-
-Use `stow` in verbose mode (`-v`).
-
-
-#### ⚠️ Conflicts
-
-If a file like `~/.zshrc` already exists and is not a symlink, `stow` will error out.
-
-To fix:
+If a target file already exists in `~`, back it up:
 
 ```zsh
 mv ~/.zshrc ~/.zshrc.backup
 stow zsh
 ```
 
-4. ✔️ Done!
+### 🛠️📝 Edit Dotfiles
 
----
-
-### 🛠️ Managing Your Dotfiles
-
-After your dotfiles are symlinked into place, always edit the files in the repo — not the symlink targets in your home directory directly.
-
-For example, to edit your Zsh config:
+Edit files **only** in the repo:
 
 ```zsh
 code ~/dev/dotfiles/zsh/.zshrc
 ```
 
-**⚠️ Remember to commit!** 😎
-
----
-
-## ➕✨ Adding New Dotfiles Sets
+⚠️ **Don't forget to commit!** 😎
 
 
-Want to manage more config files? Add new sets by:
+### ➕✨ Add New Packages
 
-1. **Create a new folder** in the **root of this repo**, named after the tool or purpose — for example, `brew/` to manage Homebrew setup files.
+1. Make new folder in repo root
+2. Move config(s) inside
+3. `stow <folder>`
+
 
 ```zsh
 cd ~/dev/dotfiles
-mkdir brew
+mkdir zsh
+mv ~/.zshrc zsh/
+mv ~/.zprofile zsh/
+stow zsh
 ```
 
-2.	**Move the config files inside this folder**.
-
-For Homebrew, this might be a Brewfile that lists all your installed packages:
-
-```zsh
-mv ~/Brewfile brew/Brewfile
-```
-
-3. ** Use `stow` to symlink the new set**:
-
-```zsh
-stow brew
-```
 
 ---
 
@@ -158,14 +110,14 @@ stow brew
 * ❌ `stow` appeared to work on dotfiles, but actually failed to create a symlink
 
 🩺 **Diagnosis**
-* 👉 macOS System Integrity Protection (SIP) was preventing the operation
+* 👉 MacOS System Integrity Protection (SIP) was preventing the operation
 
 ✅ **Solution**
-* ❗️ must specify target explicitly to bypass SIP: `stow --target=~ <folder>` (when working with system-protected config files in macOS) 
+* ❗️ Explicitly set `--target=~` to bypass SIP when linking protected files
 * created `.stowrc` for this repo & added `--target=~` to prevent having to type the fix w/ every command
 
 #### Note
-* ⚠️ When Stow fails due to SIP, it fails silently ***regardless of the level of verbosity***. Increasing verbosity is not a workaround! 
+* ⚠️ Stow fails silently when SIP blocks it — verbosity has no effect.
 * Stow works as expected with normal files, even when the target the home folder (tested & confirmed). It's specifically dotfiles/configs that are protected by the operating system.
 
 ### Troubleshooting Detail
@@ -217,7 +169,9 @@ The above shows:
 * ❌ After running Stow, the symlink does not appear.
 * ❌ `dtrace` identifies Stow failed due to System Integrity Protection
 
+
 ---
+
 
 ## Appendix B: 📝 TODO
 
@@ -226,13 +180,13 @@ The above shows:
 - [ ] Backup shell aliases 
 - [ ] Brew (Homebrew packages (?) and Brewfile)  
 - [ ] Python (`pip` configs, `virtualenvwrapper`, etc.)  
-- [ ] VS Code (settings, extensions, keybindings)
-- [ ] AWS CLI config ?
+- [ ] Useful Scripts: keep here or move to a separate repo?
 - [ ] `~/.stow-local-ignore`
     - To ignore specific files when symlinking (e.g., README files or notes to self), use a `.stow-local-ignore` file in the package folder.
-- [ ] Figure out what to do with useful scripts — keep here or separate repo?
+
 
 ---
+
 
 ## Appendix C: 💾 Commonly Backed-Up Dotfiles & Configs
 
@@ -243,7 +197,7 @@ For inspiration.
 ### 🐚 Shell-related
 * `~/.zshrc`, `~/.zprofile`, `~/.zlogin` – Zsh configs
 * `~/.bashrc`, `~/.bash_profile` – Bash configs (if still using Bash)
-* `~/.aliases` – custom aliases file (often sourced from `.zshrc`)
+* `~/.aliases` – custom aliases file (usually sourced in `.zshrc`)
 * `~/.exports` – exported env vars (ditto)
 * `~/.functions` – shell functions (ditto)
 * `~/.profile` – sometimes used for login shell config
@@ -255,7 +209,7 @@ For inspiration.
 * `~/.emacs.d/`, `~/.emacs` – Emacs
 * `~/Library/Application Support/Code/User/` – VS Code settings (`settings.json`, `keybindings.json`, `snippets/`, extensions list via script)
 * VSCode:
-    * untested ChatGPT suggestion; use with caution:
+    * untested ChatGPT suggestion; use as reference:
     ```
     # Save extensions
     code --list-extensions > vscode/extensions.txt
@@ -277,8 +231,7 @@ For inspiration.
 * `~/.config/homebrew/` – if you customize paths or taps
 
 ### 🌐 Cloud & CLI tools
-* `~/.aws/credentials` and `config` – AWS CLI
-    * who tf backs up credentials lolol
+* `~/.aws/config` – AWS CLI
 * `~/.azure/`, `~/.gcloud/` – Other cloud CLIs
 * `~/.ssh/` – keys and config (be careful with permissions and secrets!)
     * config file contains host aliases, ports, and other settings — it’s safe (and useful) to version.
