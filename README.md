@@ -2,7 +2,7 @@
 
 Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
-## 📚 Table of Contents
+## 📖 Table of Contents
 
 - [📝 TODO](#-todo)
 - [🚀 QuickStart](#-quickstart)
@@ -11,7 +11,7 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
   - [📖 Basic Stow Commands](#-basic-stow-commands)
   - [⚙️ .stowrc Defaults](#️-stowrc-defaults)
 - [🤯 Troubleshooting](#-troubleshooting)
-- [Appendix: 💾 Commonly Backed-Up Dotfiles & Configs](#appendix--commonly-backed-up-dotfiles--configs)
+- [✨ Appendix: Inspiration](#-appendix--inspiration)
 
 ---
 
@@ -41,7 +41,7 @@ cd ~/dev/dotfiles
 ⚠️ Execute all `stow` commands from **repo root** directory!
 
 ### 🔗 Setup Symlinks
-Symlink the dotfiles in this repo to your home folder:
+Symlink the dotfiles in the named packages (of this repo) to your home folder:
 
 ```zsh
 stow zsh git nvim   # Example
@@ -60,9 +60,10 @@ stow zsh
 
 ```zsh
 code ~/dev/dotfiles/zsh/.zshrc
+git commit -a
 ```
 
-⚠️ **Don't forget to commit!** 😎
+⚠️ ***Don't forget to commit!*** 😎
 
 
 ### ➕ Add New Packages
@@ -80,9 +81,9 @@ stow zsh
 
 ## 📎 Details
 
-**[GNU Stow](https://www.gnu.org/software/stow/manual/stow.html)** is a symlink manager — it helps you manage your dotfiles by creating symbolic links from files in this repo to your home directory.
+🧰 **[GNU Stow](https://www.gnu.org/software/stow/manual/stow.html)** is a symlink manager — it helps you manage your dotfiles by creating symbolic links from files in this repo to your home directory.
 
-Instead of manually symlinking each config file, you organize your dotfiles into folders (called “packages”), and run stow <folder> to auto-link all contents into place.
+Instead of manually symlinking each config file, you organize your dotfiles into folders (called “packages”), and run `stow <folder>` to auto-link all contents into place.
 
 
 ### 📦 Packages
@@ -141,15 +142,15 @@ This repo includes a `.stowrc` file to define default flags for every Stow comma
 
 **Solution**
 * ❗️ Must explicitly set `--target=~` to bypass SIP when linking SIP-protected files
-    * Even though `stow whatever` defaults to home folder as target, SIP blocks it.
-    * Setting the target *explicitly* is the fix.
+    * Even though `stow whatever` defaults to home folder as target, SIP blocks the operation
+    * Setting the target *explicitly* is the fix
 * ✅ Created `.stowrc` and added `--target=~` so you don’t have to type it every time
 
 #### Note
 * ⚠️ Stow fails silently when SIP blocks it — verbosity has no effect.
-* Stow works *as expected* with most files, even when the target the home folder (tested & confirmed). It's specifically dotfiles/configs that are protected by the operating system in this case.
+* Stow works *as expected* with most files, even when the home folder is used as the default target & not explicitly invoked (tested & confirmed). It's specifically dotfiles/configs that are protected by the operating system in this case.
 
-### Troubleshooting Detail
+### Troubleshooting Details
 
 #### Terminal Commands
 
@@ -196,64 +197,11 @@ The above shows:
 * ✅ Manual symlinking works as expected.
 * ✅ Stow believes it’s creating the link (LINK: .gitconfig => dotfiles/git/.gitconfig).
 * ❌ After running Stow, the symlink does not appear.
-* ❌ `dtrace` identifies Stow failed due to System Integrity Protection
+* ❗️ `dtrace` identifies Stow failed due to System Integrity Protection
 
 
 ---
 
+## ✨ Appendix: Inspiration
 
-## Appendix: 💾 Commonly Backed-Up Dotfiles & Configs
-
-✨ For inspiration ✨
-
-Anything under `~/.config/` is usually fair game for versioning if you use CLI tools or TUI apps.
-
-### 🐚 Shell-related
-* `~/.zshrc`, `~/.zprofile`, `~/.zlogin` – Zsh configs
-* `~/.bashrc`, `~/.bash_profile` – Bash configs (if still using Bash)
-* `~/.aliases` – custom aliases file (usually sourced in `.zshrc`)
-* `~/.exports` – exported env vars (ditto)
-* `~/.functions` – shell functions (ditto)
-* `~/.profile` – sometimes used for login shell config
-* `~/.inputrc` – Readline config (affects shell input behavior)
-
-### 💻 Editor configs
-* `~/.vimrc`, `~/.vim/` – Vim config
-* `~/.config/nvim/` – Neovim (usually contains init.vim or init.lua)
-* `~/.emacs.d/`, `~/.emacs` – Emacs
-* `~/Library/Application Support/Code/User/` – VS Code settings (`settings.json`, `keybindings.json`, `snippets/`, extensions list via script)
-* VSCode:
-    * untested ChatGPT suggestion; use as reference:
-    ```
-    # Save extensions
-    code --list-extensions > vscode/extensions.txt
-
-    # Restore on new machine
-    cat vscode/extensions.txt | xargs -n 1 code --install-extension
-    ```
-
-### 🧪 Language/toolchain settings
-* `~/.pythonrc.py` – custom Python interactive shell config
-* `~/.npmrc` – npm config
-* `~/.nvm/` – Node Version Manager (you may want to re-install with a script instead of syncing)
-* `~/.rbenv/`, `~/.gemrc` – Ruby-related configs
-* `~/.config/poetry/` – Python Poetry config
-* `~/.cargo/` – Rust config
-
-### 📦 Package manager
-* `~/.Brewfile` or `Brewfile` – Homebrew packages (`brew bundle dump`)
-* `~/.config/homebrew/` – if you customize paths or taps
-
-### 🌐 Cloud & CLI tools
-* `~/.aws/config` – AWS CLI
-* `~/.azure/`, `~/.gcloud/` – Other cloud CLIs
-* `~/.ssh/` – keys and config (be careful with permissions and secrets!)
-    * config file contains host aliases, ports, and other settings — it’s safe (and useful) to version.
-    * keys can be kept in secrets manager like Bitwarden
-* `~/.gitconfig`, ~/.gitignore_global – Git settings
-* `~/.docker/` – Docker CLI config
-
-### 🧰 Misc Dev Tools
-* `~/.config/htop/` – `htop` config
-* `~/.config/lazygit/`
-* `~/.tmux.conf, ~/.tmux/`
+[Moved to own file!](dotfile-inspo.md)
