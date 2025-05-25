@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html).
+Annie's personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html).
 
 ## 📖 Table of Contents
 
@@ -19,10 +19,10 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/manu
 
 - [x] 🐙 `git`
 - [ ] 🐚 `zsh`
-    - [ ] basics: `.zprofile`, `.zshrc`
+    - [x] basics: `.zprofile`, `.zshrc`
     - [ ] link disparate files in `zsh/` to `.zshrc`
 - [ ] 🎭 shell [aliases](https://github.com/driesvints/dotfiles?tab=readme-ov-file#your-own-dotfiles) 
-    - [ ] create `zsh/.zsh_aliases`
+    - [ ] create `zsh/.alias`
     - [ ] fill it in 
 - [ ] 🍺 `brew` (Homebrew packages (?) and `Brewfile`)  
 - [ ] 🐍 Python (`pip` configs, `virtualenvwrapper`, etc.)  
