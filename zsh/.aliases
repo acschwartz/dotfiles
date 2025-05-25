@@ -1,0 +1,85 @@
+# =====================================================================
+#  🎭  Annie's Aliases
+# =====================================================================
+
+# 🚧 WIP
+
+# Use inspo!!
+# Read: https://github.com/driesvints/dotfiles/blob/main/aliases.zsh 
+# See TODO at bottom
+
+# =====================================================================
+
+## OMZ Examples
+# alias zshconfig="code ~/.zshrc"
+# alias ohmyzsh="code ~/.oh-my-zsh"
+
+## 🐚 Shell
+# Reload Zsh config without restarting the terminal.
+alias reload="source ~/.zshrc"
+
+## ⚡️ Shortcuts
+alias l1="ls -1"
+
+## 📁 Directories
+alias dev="cd $HOME/dev; ls -1"
+alias dotfiles="cd $HOME/dev/dotfiles; ls -1"
+
+## ☁️ iCloud Folder
+alias ic="cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs; ls -1"
+
+## 📁 PARA System
+alias para="echo $'\nPARA System'; cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs/PARA; ls -1; echo '' "
+
+alias para-p="para; 
+cd 1\ \ 🎯\ Projects\ \ \[short-term\]/ ; 
+echo $'\nProjects\n' ; 
+ls -1 ;
+echo $'\n' "
+
+alias para-a="para; 
+cd 2\ 🌱\ Areas\ \ \ \ \[ongoing\ responsibility\]/ ; 
+echo $'\nAreas of Resonsibility\n' ;
+ls -1 ;
+echo $'\n' "
+
+alias para-r="para; 
+cd 3\ 📚\ Resources\ \ \ \ \[topics,\ interests,\ hobbies\]/ ; 
+echo $'\nResources\n' ;
+ls -1 ;
+echo $'\n' "
+
+alias para-aa="para;
+cd 4\ 🗄️\ Archive/ ;
+echo $'\nArchive\n' ;
+ls -1 ;
+echo $'\n' "
+
+
+# =====================================================================
+## ❗️ TODO
+# ---------------------------------------------------------------------
+# Oh My Zsh users are encouraged to define aliases within 
+# a top-level file in the $ZSH_CUSTOM folder, with .zsh extension.
+
+# Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
+
+# =====================================================================
+## 🧠 Zsh Alias Debugging & Inspection Tips
+# ---------------------------------------------------------------------
+# ➡️ To list all currently defined aliases (if using Oh My Zsh):
+#   alias
+
+# ➡️ To figure out where your Zsh aliases are defined (including plugins):
+#   zsh -ixc : -o sourcetrace 2>&1 | grep -w alias
+
+# ➡️ To check if a name (like an alias, function, or command) is already taken:
+#   which <name>   # Shows if it's an executable or alias (e.g. `which reload`)
+#   type <name>    # Tells you if it's an alias, function, builtin, or file
+#
+# Examples:
+#   which reload    → not found (safe to use)
+#   type reload     → alias (already defined)
+# =====================================================================
