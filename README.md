@@ -17,7 +17,7 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
 ## 📝 TODO
 
-- [✅] 🌱 `git`
+- [x] 🐙 `git`
 - [ ] 🐚 `zsh`
 - [ ] 🎭 shell aliases 
 - [ ] 🍺 `brew` (Homebrew packages (?) and `Brewfile`)  
