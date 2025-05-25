@@ -4,6 +4,8 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
 ---
 
+## 🧰 GNU Stow
+
 **[GNU Stow](https://www.gnu.org/software/stow/manual/stow.html)** is a symlink manager — it helps you manage your dotfiles by creating symbolic links from files in this repo to your home directory.
 
 Instead of manually symlinking each config file, you organize your dotfiles into folders (called “packages”), and run stow <folder> to auto-link all contents into place.
@@ -15,7 +17,7 @@ For example:
 ```
 
 ### 📖 Basic Stow Commands
-These should be run **from the top level of your dotfiles repo**.
+Run them **from the top level** of the dotfiles repo.
 ```
 stow <folder>         # Link all files in <folder> to target dir (defaults to $HOME)
 stow -D <folder>      # Unlink (i.e., "delete") the symlinks for <folder>
@@ -30,7 +32,7 @@ This repo includes a `.stowrc` file to define default flags for every Stow comma
 --verbose=1           # Default set for minimal feedback, since stow’s default (0) gives no output at all
 ```
 
-#### 🛑 macOS Note
+#### 🛑 MacOS Note
 Due to System Integrity Protection (SIP), Stow may silently fail to link some files (like ~/.zshrc) without any error message — ***even with maximum verbosity***. 
 
 The explicitly set `--target=~` is to prevent this failure. See 'Troubleshooting' for further detail.
@@ -148,31 +150,21 @@ stow brew
 
 ---
 
-## 📝 TODO:
-
-- [ ] `zsh`
-- [x] `git`
-- [ ] Backup shell aliases 
-- [ ] Brew (Homebrew packages (?) and Brewfile)  
-- [ ] Python (`pip` configs, `virtualenvwrapper`, etc.)  
-- [ ] VS Code (settings, extensions, keybindings)
-- [ ] AWS CLI config ?
-- [ ] `~/.stow-local-ignore`
-    - To ignore specific files when symlinking (e.g., README files or notes to self), use a `.stow-local-ignore` file in the package folder.
-- [ ] Figure out what to do with useful scripts — keep here or separate repo?
-
----
-
 ## Appendix A: 🤯 Troubleshooting Stow on macOS
 
 ### Overview
 
-* 😱 **Problem**: `stow` appeared to work on dotfiles, but actually failed to create a symlink
-* 🩺 **Diagnosis:** macOS System Integrity Protection (SIP) was preventing the operation
-* ✅ **Solution:** when working with dotfiles, must specify target explicitly to bypass SIP: `stow --target=~ <folder>`
-    * Created `.stowrc` for this repo & added `--target=~` to prevent having to type the fix w/ every command
+😱 **Problem**
+* ❌ `stow` appeared to work on dotfiles, but actually failed to create a symlink
 
-#### ☝️ Note
+🩺 **Diagnosis**
+* 👉 macOS System Integrity Protection (SIP) was preventing the operation
+
+✅ **Solution**
+* ❗️ must specify target explicitly to bypass SIP: `stow --target=~ <folder>` (when working with system-protected config files in macOS) 
+* created `.stowrc` for this repo & added `--target=~` to prevent having to type the fix w/ every command
+
+#### Note
 * ⚠️ When Stow fails due to SIP, it fails silently ***regardless of the level of verbosity***. Increasing verbosity is not a workaround! 
 * Stow works as expected with normal files, even when the target the home folder (tested & confirmed). It's specifically dotfiles/configs that are protected by the operating system.
 
@@ -227,7 +219,22 @@ The above shows:
 
 ---
 
-## Appendix B: 💾 Commonly Backed-Up Dotfiles & Configs
+## Appendix B: 📝 TODO
+
+- [ ] `zsh`
+- [x] `git`
+- [ ] Backup shell aliases 
+- [ ] Brew (Homebrew packages (?) and Brewfile)  
+- [ ] Python (`pip` configs, `virtualenvwrapper`, etc.)  
+- [ ] VS Code (settings, extensions, keybindings)
+- [ ] AWS CLI config ?
+- [ ] `~/.stow-local-ignore`
+    - To ignore specific files when symlinking (e.g., README files or notes to self), use a `.stow-local-ignore` file in the package folder.
+- [ ] Figure out what to do with useful scripts — keep here or separate repo?
+
+---
+
+## Appendix C: 💾 Commonly Backed-Up Dotfiles & Configs
 
 For inspiration. 
 
