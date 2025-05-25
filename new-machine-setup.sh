@@ -11,6 +11,13 @@
 # [x] Set up Bitwarden browser extensions (including TouchID authentication)
 # ---------------------------------------------------
 
+# [[TODO]] FUN FACT! Bitwarden has a CLI
+# Wonder if that would have been helpful with certain tasks?
+# [Currently it is not installed]
+
+# ---------------------------------------------------
+
+
 # Begin Script ....
 
 # ---------------------------------------------------

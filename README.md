@@ -23,8 +23,8 @@ Annie's personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/s
     - [ ] link disparate files in `zsh/` to `.zshrc`
 - [ ] 🎭 shell [aliases](https://github.com/driesvints/dotfiles?tab=readme-ov-file#your-own-dotfiles) 
     - [ ] create `zsh/.alias`
-    - [ ] fill it in 
-- [ ] 🍺 `brew` (Homebrew packages (?) and `Brewfile`)  
+    - [ ] fill it in - [ideas](https://github.com/driesvints/dotfiles/blob/main/aliases.zsh)
+- [ ] 🍺 `brew` (Homebrew packages (?) and [Brewfile](https://github.com/jbranchaud/til/blob/master/brew/export-list-of-everything-installed-by-brew.md))  
 - [ ] 🐍 Python (`pip` configs, `virtualenvwrapper`, etc.)  
 - [ ] 📜 Useful Scripts
 - [x] `~/.stow-local-ignore`
