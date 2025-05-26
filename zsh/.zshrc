@@ -45,23 +45,28 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ## Theme Catalog:  https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
-## Tip: Preview a theme temporarily 👀
-#   - To try a theme in terminal without editing your .zshrc,
-#   - temporarily apply a theme to the current session by running:
-#     ZSH_THEME="agnoster" source $ZSH/oh-my-zsh.sh
-
 ZSH_THEME="bullet-train"
 # ZSH_THEME="random"
 #  - "random" loads a random theme each time Oh My Zsh is loaded
 #  - to know which one was loaded, run: echo $RANDOM_THEME
 
 ZSH_THEME_RANDOM_CANDIDATES=( "bullet-train" "amuse" "ys")
-# ZSH_THEME_RANDOM_CANDIDATES=( "bullet-train" "amuse" "ys"  "wedisagree" "cloud"  "gnzh")
+# ZSH_THEME_RANDOM_CANDIDATES=( "bullet-train" "amuse" "ys"  "wedisagree" "cloud"  "gnzh" "sunrise")
 # ZSH_THEME_RANDOM_CANDIDATES=("robbyrussell" "agnoster" )      # defaults
 #   - Set list of themes to pick from when loading at random.
 #   - Setting this variable when ZSH_THEME=random will cause zsh to load
 #   a theme from this variable instead of looking in $ZSH/themes/
 #   - If set to an empty array, this variable will have no effect.
+
+
+## 💡 Tip: PREVIEW themes temporarily 👀
+# To try a theme in your current session without editing your .zshrc,
+# use themes plugin (installed):
+#   ⭐️  lstheme              list installed themes  
+#   ⭐️  theme <name>         change theme
+#   ⭐️  theme                changes theme to random        
+# ( pretty sure this just executes `ZSH_THEME="name"; source $ZSH/oh-my-zsh.sh``)
+
 
 
 # ================== 🚄 Bullet Train Theme Config ===============================
@@ -147,9 +152,84 @@ BULLETTRAIN_PROMPT_ORDER=(
 # 📁 Official plugins:          $ZSH/plugins/
 # 📁 Custom user plugins:       $ZSH_CUSTOM/plugins/
 
-plugins=(git)
-#  - Example format: plugins=(rails git textmate ruby lighthouse)
 #  - (!) Add wisely, as too many plugins slow down shell startup.
+plugins=(
+    themes
+    # change ZSH theme from the shell
+
+    zsh-interactive-cd
+    # Provides an interactive way to change directories in zsh using fzf.
+    # Usage:
+    #    ⭐️ `cd ` + tab
+    # Docs: https://github.com/mrjohannchang/zsh-interactive-cd 
+
+    alias-finder
+    # Makes learning new aliases easier.
+    # Searches the defined aliases and outputs any that match the command inputted.
+    # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/alias-finder
+
+    command-not-found
+    # Suggested packages to be installed if a command cannot be found using
+    # (command-not-found package for zsh).
+
+    safe-paste
+    # Prevents any code from actually running while pasting, so you have a chance
+    # to review what was actually pasted before running it.
+
+    copypath
+    # Copies the path of given directory or file to the system clipboard.
+    #  Usage:
+    #   ⭐️ copypath                         copies the absolute path of the current dir.
+    #   ⭐️ copypath <file_or_directory>     copies the absolute path of the given file.
+
+    copyfile
+    # Puts the contents of a file in your system clipboard so you can paste it anywhere.
+    # Usage:  ⭐️ copyfile <filename>        copies the contents of the file named filename.
+    
+    web-search
+    # Launch a websearch (in browser) from the terminal
+    # Usage:
+    #  ⭐️ web_search <context> <term> [more terms if you want]
+    #  ⭐️ <context> <term> [more terms if you want]
+    #  e.g.:     reddit test "search?" query
+    #            google test search query
+    #  Other contexts: ppai (perplexity ai), chatgpt, github, 
+    # Context list: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search
+
+     gitignore 
+    # Use gitignore.io from the command line (requieres active internet connection).
+    # Usage:
+    #  ⭐️ gi list                list all the currently supported gitignore.io templates.
+    #  ⭐️ gi [TEMPLATENAME]      show git-ignore output on the command line.
+    #  ⭐️ gi [TEMPLATENAME] >> .gitignore
+        # Append programming language settings to your projects .gitignore.
+
+
+    ### Aliases
+    common-aliases
+    brew
+    git
+    )
+
+# Plugs I don't need yet, but will!
+# tldr --> https://github.com/tldr-pages/tldr, https://tldr.sh/ 
+#       see also: competing projects - def need a cheat sheet tho
+# tldr # adds `tldr` to front of the command you are typing (but haven't sent)
+# man  # adds `man` to front of the command you are typing (but haven't sent)
+# autoenv - automatically activate virtual environments
+# git-commit - styler for commits - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-commit
+# jsontools - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jsontools
+# macos - for iTerm - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/macos
+# pip - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pip
+# pipenv - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pipenv 
+# ssh - provides hostname completion based off your ssh config
+# dirhistory - adds keyboard shortcuts for navigating directory history and hierarchy
+#              https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory
+# 
+
+
+# ========================= 🔌 Plugin Settings ==================================
+zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
 
 
 # ======================== 📁 Custom Folder Path ================================
@@ -275,13 +355,24 @@ source ~/.aliases
 # export ARCHFLAGS="-arch $(uname -m)"
 
 
-# ======================== 🚀 Startup Scripts ===================================
+# ========================= 🥊 Custom Functions =================================
+
 ## 🎨 Test out Terminal Themes (distinct from OMZ themes):
 # Uncomment when deciding between multiple terminal colors!
 # terminal_profile=$(osascript -e 'tell application "Terminal" to get name of current settings of front window')
-# echo; neofetch    # 🍎🌈
+# echo; neofetch    # 🍏🌈
 # for color in black white red green yellow blue magenta cyan; do
 #   print -P "%B%F{$color}$terminal_profile%f%b %F{$color} $color $color $color $color $color $color%f"
 # done
+
+## 🎨 Test out Terminal Themes (distinct from OMZ themes):
+# Uncomment when deciding between multiple terminal colors!
+testcolor(){
+    terminal_profile=$(osascript -e 'tell application "Terminal" to get name of current settings of front window')
+    echo; neofetch --block_width 4 --memory_percent on 
+    for color in black red green yellow blue magenta cyan white; do
+        print -P "%B%F{$color}$terminal_profile%f%b %F{$color} $color $color $color $color $color $color%f"
+    done
+}
 
 # ______________________________________________________________________________

@@ -33,6 +33,12 @@ alias lo="ls -1"
 ## 🧬 Git
 alias unstage="git restore --staged ."
 
+## 🍏🌈 Neofetch
+alias neo="neofetch"
+
+## Gitignore.io OMZ plugin
+alias gitignore="gi"
+
 ## 🐍 Python
 alias py="python"
 alias pip="pip3"
