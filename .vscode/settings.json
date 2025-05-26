@@ -1,0 +1,7 @@
+{
+    // Workspace - Specific Settings
+
+    // This theme is good for colorful comments, which this workspace has a lot of.
+    // A backup colorful comment theme is VSCode Dark, but the colors aren't as fun.
+    "workbench.colorTheme": "Digi-Angler Dark Theme"
+}
