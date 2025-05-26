@@ -495,16 +495,29 @@ prompt_dir() {
   local _context="$(context)"
   [[ $BULLETTRAIN_DIR_CONTEXT_SHOW == true && -n "$_context" ]] && dir="${dir}${_context}:"
 
+  ## My customization - bold only working directory name in all detail levels
   if [[ $BULLETTRAIN_DIR_EXTENDED == 0 ]]; then
     #short directories
-    dir="${dir}%1~"
+    dir="${dir}%B%1~%b"
   elif [[ $BULLETTRAIN_DIR_EXTENDED == 2 ]]; then
     #long directories
-    dir="${dir}%0~"
+    dir="${dir}%0~/%B%1~%b"
   else
     #medium directories (default case)
-    dir="${dir}%4(c:...:)%3c"
+    dir="${dir}%4(c:...:)%3c/%B%1~%b"
   fi
+
+  ##Backup - original code
+  # if [[ $BULLETTRAIN_DIR_EXTENDED == 0 ]]; then
+  #   #short directories
+  #   dir="${dir}%1~"
+  # elif [[ $BULLETTRAIN_DIR_EXTENDED == 2 ]]; then
+  #   #long directories
+  #   dir="${dir}%0~"
+  # else
+  #   #medium directories (default case)
+  #   dir="${dir}%4(c:...:)%3c"
+  # fi
 
   prompt_segment $BULLETTRAIN_DIR_BG $BULLETTRAIN_DIR_FG $dir
 }

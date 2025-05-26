@@ -73,18 +73,18 @@ ZSH_THEME_RANDOM_CANDIDATES=( "bullet-train" "amuse" "ys")
 # Config options: https://github.com/caiogondim/bullet-train.zsh/
 
 # BULLETTRAIN_TIME_12HR=true
-BULLETTRAIN_DIR_EXTENDED=1              # 1 = medium detail
-BULLETTRAIN_CONTEXT_DEFAULT_USER=annie
-BULLETTRAIN_CONTEXT_HOSTNAME=💻
+BULLETTRAIN_DIR_EXTENDED=1                  # 1 = medium detail
+BULLETTRAIN_CONTEXT_DEFAULT_USER=annie      # don't show unless in context other than default (e.g. ssh)
+BULLETTRAIN_CONTEXT_HOSTNAME=💻             # Replace 'MacBookPro'
 BULLETTRAIN_PROMPT_ADD_NEWLINE=true
 BULLETTRAIN_GIT_COLORIZE_DIRTY=true
-BULLETTRAIN_STATUS_EXIT_SHOW=true       # show exit code of last command
+BULLETTRAIN_STATUS_EXIT_SHOW=true           # show exit code of last command
 
 ### Color changes by segment
 
 # Directory
 BULLETTRAIN_DIR_FG=black
-BULLETTRAIN_DIR_BG=blue
+BULLETTRAIN_DIR_BG=green
 
 # Time
 BULLETTRAIN_TIME_BG=black
