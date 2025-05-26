@@ -639,8 +639,9 @@ prompt_time() {
   if [[ $BULLETTRAIN_TIME_12HR == true ]]; then
     # prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG %D{%r}           # original
     # prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG '%D{%L:%M %p}'     # my customization: 3:25 PM
-    XC_DAY_TIME_12_HR_WITH_AMPM="%D{%L:%M %p, %a %b %d}"  # output:  2:41 PM, Mon May 26
-    prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG $XC_DAY_TIME_12_HR_WITH_AMPM   # my customization
+    # XC_DAY_TIME_12_HR_WITH_AMPM="%D{%L:%M %p, %a %b %d}"  # output:  2:41 PM, Mon May 26
+    TIME_12HR='%B%D{⌚️ %L:%M}%b'     # my customization: 3:25 PM
+    prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG $TIME_12HR   # my customization
   else
     # prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG %D{%T}      # original
     prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG '⌚️ %D{%T}'   # my customization

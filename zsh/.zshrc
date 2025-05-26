@@ -84,11 +84,11 @@ BULLETTRAIN_STATUS_EXIT_SHOW=true           # show exit code of last command
 
 # Directory
 BULLETTRAIN_DIR_FG=black
-BULLETTRAIN_DIR_BG=white
+BULLETTRAIN_DIR_BG=cyan
 
 # Time
 BULLETTRAIN_TIME_BG=black
-BULLETTRAIN_TIME_FG=cyan
+BULLETTRAIN_TIME_FG=green
 # time: black-on-white
 # BULLETTRAIN_TIME_BG=white
 # BULLETTRAIN_TIME_FG=black
