@@ -3,7 +3,7 @@
 # =             https://github.com/caiogondim/bullet-train.zsh                 =
 # ==============================================================================
 
-# =========================== README ===========================================
+# ============================= README =========================================
 # In order for this theme to render correctly, you will need a
 # [Powerline-patched font](https://github.com/Lokaltog/powerline-fonts).
 #
