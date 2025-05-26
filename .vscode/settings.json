@@ -1,7 +1,15 @@
 {
     // Workspace - Specific Settings
 
-    // This theme is good for colorful comments, which this workspace has a lot of.
-    // A backup colorful comment theme is VSCode Dark, but the colors aren't as fun.
+    /* This workspace requires a 'colorful comments' theme, because there are a lot of comments.
+       Most themes have dark grey comments, which are less legible for large block comment 'novels'.
+
+       Find more here: https://vscodethemes.com/?q=dark  (easy preview)
+
+       Suitable themes  (w/ comment color):
+       -    "Digi-Angler Dark Theme" - yellow/goldenrod
+       -    VSCode Dark (default)  -  dk green
+    
+    */
     "workbench.colorTheme": "Digi-Angler Dark Theme"
 }
