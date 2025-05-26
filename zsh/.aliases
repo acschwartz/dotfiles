@@ -30,6 +30,9 @@ alias reload="source ~/.zshrc"
 ## ⚡️ Shortcuts
 alias l1="ls -1"
 
+## 🧬 Git
+alias unstage="git restore --staged ."
+
 ## 📁 Directories
 alias dev="cd $HOME/dev; ls -1"
 alias dotfiles="cd $HOME/dev/dotfiles; ls -1"
@@ -63,6 +66,7 @@ cd 4\ 🗄️\ Archive/ ;
 echo $'\nArchive\n' ;
 ls -1 ;
 echo $'\n' "
+
 
 
 # =====================================================================

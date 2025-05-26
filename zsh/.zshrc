@@ -158,7 +158,7 @@ source $ZSH/oh-my-zsh.sh
 # 	•	Local tweaks and personal additions
 # =====================================================================
 
-# ====================- 🎭 Personal Aliases ============================
+# ===================== 🎭 Personal Aliases ============================
 # ⚠️ Personal aliases OVERRIDE those provided by
 #    Oh My Zsh libs, plugins, and themes!
 
@@ -192,6 +192,16 @@ source ~/.aliases
 
 ## 🧱 Compilation Flags
 # export ARCHFLAGS="-arch $(uname -m)"
+
+
+# ==================== 🚀 Startup Scripts ==============================
+## 🎨 Test out Terminal Themes (distinct from OMZ themes):
+# Uncomment when deciding between multiple terminal colors!
+# terminal_profile=$(osascript -e 'tell application "Terminal" to get name of current settings of front window')
+# echo; neofetch    # 🍎🌈
+# for color in black white red green yellow blue magenta cyan; do
+#   print -P "%B%F{$color}$terminal_profile%f%b %F{$color} $color $color $color $color $color $color%f"
+# done
 
 
 
