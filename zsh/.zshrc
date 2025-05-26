@@ -211,6 +211,7 @@ plugins=(
     git
     )
 
+
 # Plugs I don't need yet, but will!
 # tldr --> https://github.com/tldr-pages/tldr, https://tldr.sh/ 
 #       see also: competing projects - def need a cheat sheet tho
@@ -227,9 +228,8 @@ plugins=(
 #              https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory
 # 
 
-
 # ========================= 🔌 Plugin Settings ==================================
-zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
+zstyle ':omz:plugins:alias-finder' autoload yes
 
 
 # ======================== 📁 Custom Folder Path ================================
@@ -374,5 +374,6 @@ testcolor(){
         print -P "%B%F{$color}$terminal_profile%f%b %F{$color} $color $color $color $color $color $color%f"
     done
 }
+alias colortest="testcolor"  # because I kept misremembering the name 50/50!
 
 # ______________________________________________________________________________
