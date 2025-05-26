@@ -369,11 +369,12 @@ source ~/.aliases
 # Uncomment when deciding between multiple terminal colors!
 testcolor(){
     terminal_profile=$(osascript -e 'tell application "Terminal" to get name of current settings of front window')
-    echo; neofetch --block_width 4 --memory_percent on 
+    echo; neofetch --block_width 5 --block_height 2 --memory_percent on 
     for color in black red green yellow blue magenta cyan white; do
         print -P "%B%F{$color}$terminal_profile%f%b %F{$color} $color $color $color $color $color $color%f"
     done
 }
 alias colortest="testcolor"  # because I kept misremembering the name 50/50!
+alias colors="testcolor"
 
 # ______________________________________________________________________________
