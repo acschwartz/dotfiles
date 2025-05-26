@@ -29,7 +29,7 @@
 ## `omz reload`
 
 ## ⚡️ Shortcuts
-alias l1="ls -1"
+alias lo="ls -1"
 
 ## 🧬 Git
 alias unstage="git restore --staged ."

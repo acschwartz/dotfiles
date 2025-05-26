@@ -50,15 +50,97 @@ export ZSH="$HOME/.oh-my-zsh"
 #   - temporarily apply a theme to the current session by running:
 #     ZSH_THEME="agnoster" source $ZSH/oh-my-zsh.sh
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="bullet-train"
+# ZSH_THEME="random"
 #  - "random" loads a random theme each time Oh My Zsh is loaded
 #  - to know which one was loaded, run: echo $RANDOM_THEME
 
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ZSH_THEME_RANDOM_CANDIDATES=( "bullet-train" "amuse" "ys")
+# ZSH_THEME_RANDOM_CANDIDATES=( "bullet-train" "amuse" "ys"  "wedisagree" "cloud"  "gnzh")
+# ZSH_THEME_RANDOM_CANDIDATES=("robbyrussell" "agnoster" )      # defaults
 #   - Set list of themes to pick from when loading at random.
 #   - Setting this variable when ZSH_THEME=random will cause zsh to load
 #   a theme from this variable instead of looking in $ZSH/themes/
 #   - If set to an empty array, this variable will have no effect.
+
+
+# ================== 🚄 Bullet Train Theme Config ===============================
+# Config options: https://github.com/caiogondim/bullet-train.zsh/
+
+# BULLETTRAIN_TIME_12HR=true
+BULLETTRAIN_DIR_EXTENDED=1              # 1 = medium detail
+BULLETTRAIN_CONTEXT_DEFAULT_USER=annie
+BULLETTRAIN_CONTEXT_HOSTNAME=💻
+BULLETTRAIN_PROMPT_ADD_NEWLINE=true
+BULLETTRAIN_GIT_COLORIZE_DIRTY=true
+BULLETTRAIN_STATUS_EXIT_SHOW=true       # show exit code of last command
+
+### Color changes by segment
+
+# Directory
+BULLETTRAIN_DIR_FG=black
+BULLETTRAIN_DIR_BG=blue
+
+# Time
+BULLETTRAIN_TIME_BG=black
+BULLETTRAIN_TIME_FG=cyan
+# time: black-on-white
+# BULLETTRAIN_TIME_BG=white
+# BULLETTRAIN_TIME_FG=black
+
+# Contect (Annie@MBP)
+BULLETTRAIN_CONTEXT_BG=white
+BULLETTRAIN_CONTEXT_FG=black
+
+# Exec Time
+BULLETTRAIN_EXEC_TIME_BG=black
+BULLETTRAIN_EXEC_TIME_FG=yellow
+
+# 05/2025 workaround for bullet-train issue displaying git status
+# https://github.com/ohmyzsh/ohmyzsh/issues/12328
+zstyle ':omz:alpha:lib:git' async-prompt no 
+
+# Time-last ordering
+BULLETTRAIN_PROMPT_ORDER=(
+  custom
+  status
+  context
+  dir
+  screen
+  virtualenv
+  nvm
+  aws
+  ruby
+  go
+  rust
+  elixir
+  hg
+  perl
+  git
+  time
+  cmd_exec_time
+)
+
+# "Agnoster"-like ordering (another theme) - Time first
+# BULLETTRAIN_PROMPT_ORDER=(
+#   time
+#   context
+#   dir
+#   screen
+#   virtualenv
+#   nvm
+#   aws
+#   ruby
+#   go
+#   rust
+#   elixir
+#   hg
+#   perl
+#   git
+#   status
+#   cmd_exec_time
+#   custom
+# )
 
 
 # ========================== 💫 Plugins =========================================
