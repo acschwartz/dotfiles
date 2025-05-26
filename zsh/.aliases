@@ -30,8 +30,9 @@ alias omzr="omz reload"     # Reload Zsh config without restarting the terminal.
 ## ⚡️ Shortcuts
 alias lo="ls -1"
 
-## 🧬 Git
+## 🐙 Git
 alias unstage="git restore --staged ."
+alias gs="git status"
 
 ## 🍏🌈 Neofetch
 alias neo="neofetch"
