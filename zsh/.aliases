@@ -26,7 +26,7 @@
 
 ## 🐚 Shell
 # Reload Zsh config without restarting the terminal.
-alias reload="source ~/.zshrc"
+## `omz reload`
 
 ## ⚡️ Shortcuts
 alias l1="ls -1"
