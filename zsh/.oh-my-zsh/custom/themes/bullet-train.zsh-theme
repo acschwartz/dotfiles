@@ -519,7 +519,7 @@ prompt_dir() {
   #   dir="${dir}%4(c:...:)%3c"
   # fi
 
-  prompt_segment $BULLETTRAIN_DIR_BG $BULLETTRAIN_DIR_FG $dir
+  prompt_segment $BULLETTRAIN_DIR_BG $BULLETTRAIN_DIR_FG "📂 ${dir}"
 }
 
 # RUBY
@@ -637,8 +637,10 @@ prompt_screen() {
 
 prompt_time() {
   if [[ $BULLETTRAIN_TIME_12HR == true ]]; then
-    # prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG %D{%r}      # original
-    prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG '⌚️ %D{%r}'   # my customization
+    # prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG %D{%r}           # original
+    # prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG '%D{%L:%M %p}'     # my customization: 3:25 PM
+    XC_DAY_TIME_12_HR_WITH_AMPM="%D{%L:%M %p, %a %b %d}"  # output:  2:41 PM, Mon May 26
+    prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG $XC_DAY_TIME_12_HR_WITH_AMPM   # my customization
   else
     # prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG %D{%T}      # original
     prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG '⌚️ %D{%T}'   # my customization
@@ -710,6 +712,7 @@ build_prompt() {
 
 NEWLINE='
 '
+
 PROMPT=''
 [[ $BULLETTRAIN_PROMPT_ADD_NEWLINE == true ]] && PROMPT="$PROMPT$NEWLINE"
 PROMPT="$PROMPT"'%{%f%b%k%}$(build_prompt)'
@@ -717,3 +720,64 @@ PROMPT="$PROMPT"'%{%f%b%k%}$(build_prompt)'
 PROMPT="$PROMPT"'%{${fg_bold[default]}%}'
 [[ $BULLETTRAIN_PROMPT_SEPARATE_LINE == false ]] && PROMPT="$PROMPT "
 PROMPT="$PROMPT"'$(prompt_chars)%{$reset_color%}'
+
+
+
+
+# ===========================================================================
+#   WIP -- Time display tinkering
+# ===========================================================================
+## [amuse]'s time display
+# RPROMPT='⌚ %{$fg_bold[red]%}%*%{$reset_color%}'
+# output: ⌚ 14:32:06 (red & bold)
+
+## [wedisagree]'s time display
+# wedisagree also has a dynamic time display that changes color since last commit!
+# RPROMPT='%{$fg[green]%}%*%{$reset_color%}'
+# output: 14:31:47
+
+
+## [smt] theme has time SINCE last commit display [19m] w/ git status like: [19m]! ✹
+
+## [crunch] has very compact time display:  (the 13:52 part)
+# {13:52}~/dev/dotfiles:main ✗ ➭ 
+# CRUNCH_BRACKET_COLOR="%{$fg[white]%}"
+# CRUNCH_TIME_COLOR="%{$fg[yellow]%}"
+# CRUNCH_TIME_="$CRUNCH_BRACKET_COLOR{$CRUNCH_TIME_COLOR%T$CRUNCH_BRACKET_COLOR}%{$reset_color%}"
+# PROMPT="$CRUNCH_TIME_%{$reset_color%}" 
+# output: {13:52}
+
+## [wezm]  green directory path on the right:
+# RPROMPT='%{$fg[green]%}%~%{$reset_color%}'  # output: full directory path in green
+
+## [junkfood]  actually has formatted date & time !!!
+# Grab the current date (%W) and time (%t): #( 05/26/25@ 1:57PM )
+# JUNKFOOD_TIME_="%{$fg_bold[white]%}( %{$fg_bold[yellow]%}%W%{$reset_color%}@%{$fg_bold[white]%}%t )%{$reset_color%}"
+# RPS1="$JUNKFOOD_TIME_"
+# output:  ( 05/26/25@ 2:44PM ) 
+
+## [sunaku]  kinda genius in its simplicity!
+# !main ~/dev/dotfiles> 
+
+# [xiong-chiamiov]  has formatted day, date & time!!
+# [annie@MacBookPro] - [~/dev/dotfiles] - [Mon May 26, 13:58]
+# XC_TIME_24_HR="%{$fg[$BULLETTRAIN_TIME_FG]%}%D{%a %b %d, %H:%M}%{$reset_color%}"
+# RPROMPT='$XC_TIME_24_HR'
+# output:  Mon May 26, 14:43 
+
+# XC_TIME_12_HR_WITH_AMPM="%{$fg[$BULLETTRAIN_TIME_FG]%}%D{%a %b %d, %L:%M %p}%{$reset_color%}"
+# RPROMPT='$XC_TIME_12_HR_WITH_AMPM'
+# output:  Mon May 26, 2:41 PM
+
+
+# XC_TIME_12_HR_NO_AMPM='%{\e[0;34m%}%B[%b%{\e[1;33m%}%D{%a %b %d, %I:%M}%b%{\e[0;34m%}%B]%b'
+# XC_TIME_12_HR_NO_AMPM="%{$fg[$BULLETTRAIN_TIME_FG]%}%D{%a %b %d, %L:%M}%{$reset_color%}"
+# RPROMPT='$XC_TIME_12_HR_NO_AMPM'
+# output:   Mon May 26, 2:45
+
+# [nanotech] has a nice 12hr time too (2:15 PM)
+# RPROMPT='%F{green}%D{%L:%M} %F{yellow}%D{%p}%f'
+# output:  2:33 PM
+
+# RPROMPT puts string on same line as where you type.
+# RPS1 appears to do the same exact thing?

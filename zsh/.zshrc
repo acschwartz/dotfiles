@@ -50,7 +50,7 @@ ZSH_THEME="bullet-train"
 #  - "random" loads a random theme each time Oh My Zsh is loaded
 #  - to know which one was loaded, run: echo $RANDOM_THEME
 
-ZSH_THEME_RANDOM_CANDIDATES=( "bullet-train" "amuse" "ys")
+# ZSH_THEME_RANDOM_CANDIDATES=( "bullet-train" "amuse" "ys")
 # ZSH_THEME_RANDOM_CANDIDATES=( "bullet-train" "amuse" "ys"  "wedisagree" "cloud"  "gnzh" "sunrise")
 # ZSH_THEME_RANDOM_CANDIDATES=("robbyrussell" "agnoster" )      # defaults
 #   - Set list of themes to pick from when loading at random.
@@ -72,7 +72,7 @@ ZSH_THEME_RANDOM_CANDIDATES=( "bullet-train" "amuse" "ys")
 # ================== 🚄 Bullet Train Theme Config ===============================
 # Config options: https://github.com/caiogondim/bullet-train.zsh/
 
-# BULLETTRAIN_TIME_12HR=true
+BULLETTRAIN_TIME_12HR=true
 BULLETTRAIN_DIR_EXTENDED=1                  # 1 = medium detail
 BULLETTRAIN_CONTEXT_DEFAULT_USER=annie      # don't show unless in context other than default (e.g. ssh)
 BULLETTRAIN_CONTEXT_HOSTNAME=💻             # Replace 'MacBookPro'
@@ -84,7 +84,7 @@ BULLETTRAIN_STATUS_EXIT_SHOW=true           # show exit code of last command
 
 # Directory
 BULLETTRAIN_DIR_FG=black
-BULLETTRAIN_DIR_BG=green
+BULLETTRAIN_DIR_BG=white
 
 # Time
 BULLETTRAIN_TIME_BG=black
