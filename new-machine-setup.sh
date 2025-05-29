@@ -7,6 +7,9 @@
 
 # Step 0:
 # [x] Download browsers (Chrome, etc)
+#   FYI - chrome can be installed via homebrew!
+#   ⭐️ see examples here: https://catalins.tech/how-i-setup-new-macbooks/
+#   ⭐️ good example for how to structure scripts - https://github.com/sheharyarn/dotfiles/  
 # [x] Download Bitwarden s*cret manager
 # [x] Set up Bitwarden browser extensions (including TouchID authentication)
 # ---------------------------------------------------
@@ -40,11 +43,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # FYI - Unsure what to do with curl exactly yet (in this script)
 # Read https://www.joyfulbikeshedding.com/blog/2020-05-11-best-practices-when-using-curl-in-shell-scripts.html
-
-# [x] Install External OMZ Plugins
-brew install zsh-syntax-highlighting
-brew install zsh-autosuggestions
-# they should already be properly sourced in my .zshrc
 
 # ---------------------------------------------------
 
@@ -80,3 +78,34 @@ brew install visual-studio-code
 # TODO: reinstall VSCode extensions
 
 # ---------------------------------------------------
+
+# [x] (SOME) MacOS Settings
+# macOS provides the `defaults`` utility to customize the settings of your MacBook and certain applications
+
+# Enable tap-to-click for the trackpad and show the correct state in System Preferences
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults -currentHost write -g com.apple.mouse.tapBehavior -int 1
+
+# Disable the .DS file creation
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+# Finder: Show hidden files
+defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
+
+# Finder: Show the path bar
+defaults write com.apple.finder "ShowPathbar" -bool "true"
+
+# Finder: Show full path as window title  (vs. just folder name)
+# defaults write com.apple.finder _FXShowPosixPathInTitle -bool true 
+
+# Finder: Keep folders on top
+defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true"
+
+# Desktop: Keep folders on top
+defaults write com.apple.finder "_FXSortFoldersFirstOnDesktop" -bool "true"
+
+killall Finder
+
+# Apply the settings
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
