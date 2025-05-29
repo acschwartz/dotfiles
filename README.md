@@ -27,7 +27,8 @@ Annie's personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/s
 - [ ] 🍺 `brew` (Homebrew packages (?) and [Brewfile](https://github.com/jbranchaud/til/blob/master/brew/export-list-of-everything-installed-by-brew.md))  
 - [ ] 🐍 Python (`pip` configs, `virtualenvwrapper`, etc.)  
 - [ ] 📜 Useful Scripts
-- [x] `~/.stow-global-ignore`
+- [ ] `~/.stow-global-ignore`
+    - NOTE: this file lives in the **home folder** (`~`) and not at the repo root where I tried to place it 😫
 - [x] `~/.stow-local-ignore`
     - to ignore specific files when symlinking (e.g., README files or notes to self), use a `.stow-local-ignore` file in the 📦 **package** folder.
 
@@ -43,10 +44,9 @@ git clone git@github.com:acschwartz/dotfiles.git ~/dev/dotfiles
 cd ~/dev/dotfiles
 ```
 
-### 🔥 Important
-⚠️ Execute all `stow` commands from **repo root** directory!
-
-⚠️ Only run `stow` on the directories in the dotfiles folder and not the individual files.
+### ⚠️ Important !
+- Execute all `stow` commands from **repo root** directory!
+- Only run `stow` on the directories (packages) in the dotfiles folder and **not** the individual files.
 
 ### 🔗 Setup Symlinks
 Symlink the dotfiles in the named packages (of this repo) to your home folder:
@@ -123,21 +123,40 @@ stow -n <folder>     # Preview what stow *would* do (no changes made)
 stow -v <folder>     # Verbose output (use -vv, -vvv for more detail)
 ```
 
-
-### ⚙️ `.stowrc` Defaults
-This repo includes a `.stowrc` file to define default flags for every Stow command:
+For troubleshooting, I recommend using:
 ```zsh
---target=~     # Normally optional, but required in my case due to macOS SIP
---verbose=1    # Enables minimal output (Stow default is silent)
+stow --verbose=4 <folder>
 ```
 
-#### 🛑 MacOS Note
+#### ⚠️ MacOS Note
 * Due to System Integrity Protection (SIP), Stow may silently fail to link some files (like ~/.zshrc) without any error message — ⚠️ ***even with maximum verbosity***. 
     * The explicitly set `--target=~` is to prevent this failure. See 'Troubleshooting' for further detail.
 * ⚠️ Despite the working fix, because failures happen silently, always **verify** that symlinks were created correctly!
 
 
----
+### ⚙️ `.stowrc` Defaults
+This repo includes a `.stowrc` file to define default flags for every Stow command:
+```zsh
+--target=~               # Normally optional, but required in my case due to macOS SIP
+--verbose=1              # Enables minimal output (Stow default is silent)
+--ignore='<perl regex>'  # Any repo-level ignores
+```
+
+### 🛑 Stow Ignore Files
+Stow uses **Perl-style regex** in its ignore files.
+
+#### 📦 `.stow-local-ignore`
+- Put in **package folder** to ignore files *in that package only*.  
+- 🚫 Won’t work from repo root — must be inside the package.
+
+#### 🏠 `.stow-global-ignore`
+- Put in **`~` (home dir)** to ignore files/folders *across all packages* on your machine.  
+- 🚫 Won’t work from repo or elsewhere — must be at `~`.
+
+#### 📁 Repo-level ignores
+- Neither `.stow-local-ignore` nor `.stow-global-ignore` apply here.
+- Set `.stowrc` `--ignore` flags in the **repo root** to ignore files/packages across the repo.  
+
 
 
 ## 🤯 Troubleshooting

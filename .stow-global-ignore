@@ -1,9 +1,0 @@
-# Contains Perl-flavored regexs
-
-# MacOS system files
-\.DS_Store
-
-README.*
-
-# VSCode local workplace settings (for this repo)
-\.vscode
