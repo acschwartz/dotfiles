@@ -31,7 +31,7 @@ cd ~
 # ---------------------------------------------------
 
 # [x] Install XCode Command Line Tools
-xcode-select --install
+sudo xcode-select --install
 
 # ---------------------------------------------------
 
@@ -71,7 +71,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/inst
 # ---------------------------------------------------
 
 # [x] Download VSCode
-# I alrady did this (manually?) Would want to import settings etc, to next machine.
-# (and figure out my personalized settings... rn I'm pretty default)
+brew install visual-studio-code
+# TODO: reinstall VSCode extensions
 
 # ---------------------------------------------------
