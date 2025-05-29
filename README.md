@@ -27,8 +27,9 @@ Annie's personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/s
 - [ ] 🍺 `brew` (Homebrew packages (?) and [Brewfile](https://github.com/jbranchaud/til/blob/master/brew/export-list-of-everything-installed-by-brew.md))  
 - [ ] 🐍 Python (`pip` configs, `virtualenvwrapper`, etc.)  
 - [ ] 📜 Useful Scripts
+- [x] `~/.stow-global-ignore`
 - [x] `~/.stow-local-ignore`
-    - to ignore specific files when symlinking (e.g., README files or notes to self), use a `.stow-local-ignore` file in the **package** folder.
+    - to ignore specific files when symlinking (e.g., README files or notes to self), use a `.stow-local-ignore` file in the 📦 **package** folder.
 
 
 ---

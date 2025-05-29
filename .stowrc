@@ -1,5 +1,2 @@
 --target=~
 --verbose=1
---ignore='\.DS_Store'
---ignore='(?i)^README\.md$'
---exclude='^\.vscode$'
