@@ -425,7 +425,8 @@ prompt_custom() {
   fi
 
   local custom_msg
-  eval custom_msg=$BULLETTRAIN_CUSTOM_MSG
+  # eval custom_msg=$BULLETTRAIN_CUSTOM_MSG   # Backup: original code
+  custom_msg=$BULLETTRAIN_CUSTOM_MSG          # My change: bc why tf would you eval it ?!?
   [[ -n "${custom_msg}" ]] && prompt_segment $BULLETTRAIN_CUSTOM_BG $BULLETTRAIN_CUSTOM_FG "${custom_msg}"
 }
 
@@ -495,31 +496,18 @@ prompt_dir() {
   local _context="$(context)"
   [[ $BULLETTRAIN_DIR_CONTEXT_SHOW == true && -n "$_context" ]] && dir="${dir}${_context}:"
 
-  ## My customization - bold only working directory name in all detail levels
   if [[ $BULLETTRAIN_DIR_EXTENDED == 0 ]]; then
     #short directories
-    dir="${dir}%B%1~%b"
+    dir="${dir}%1~"
   elif [[ $BULLETTRAIN_DIR_EXTENDED == 2 ]]; then
     #long directories
-    dir="${dir}%0~/%B%1~%b"
+    dir="${dir}%0~"
   else
     #medium directories (default case)
-    dir="${dir}%4(c:...:)%3c/%B%1~%b"
+    dir="${dir}%4(c:...:)%3c"
   fi
 
-  ##Backup - original code
-  # if [[ $BULLETTRAIN_DIR_EXTENDED == 0 ]]; then
-  #   #short directories
-  #   dir="${dir}%1~"
-  # elif [[ $BULLETTRAIN_DIR_EXTENDED == 2 ]]; then
-  #   #long directories
-  #   dir="${dir}%0~"
-  # else
-  #   #medium directories (default case)
-  #   dir="${dir}%4(c:...:)%3c"
-  # fi
-
-  prompt_segment $BULLETTRAIN_DIR_BG $BULLETTRAIN_DIR_FG "📂 ${dir}"
+  prompt_segment $BULLETTRAIN_DIR_BG $BULLETTRAIN_DIR_FG "  ${dir}"
 }
 
 # RUBY
@@ -714,7 +702,8 @@ build_prompt() {
 NEWLINE='
 '
 
-PROMPT=''
+# PROMPT=''  # Backup: original code
+PROMPT="$NEWLINE%{$fg[$BULLETTRAIN_DIR_FG]%}%4(c:...:)%3c"    # My addition -adds dir aboce prompt at verbosity level 1
 [[ $BULLETTRAIN_PROMPT_ADD_NEWLINE == true ]] && PROMPT="$PROMPT$NEWLINE"
 PROMPT="$PROMPT"'%{%f%b%k%}$(build_prompt)'
 [[ $BULLETTRAIN_PROMPT_SEPARATE_LINE == true ]] && PROMPT="$PROMPT$NEWLINE"

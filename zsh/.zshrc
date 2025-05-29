@@ -71,6 +71,8 @@ ZSH_THEME="bullet-train"
 
 # ================== 🚄 Bullet Train Theme Config ===============================
 # Config options: https://github.com/caiogondim/bullet-train.zsh/
+    ## ❕ My changes to Bullet Train config behaviors: 
+    # BULLETTRAIN_CUSTOM_MSG -- no longer evals the custom message
 
 BULLETTRAIN_TIME_12HR=true
 BULLETTRAIN_DIR_EXTENDED=1                  # 1 = medium detail
@@ -80,11 +82,18 @@ BULLETTRAIN_PROMPT_ADD_NEWLINE=true
 BULLETTRAIN_GIT_COLORIZE_DIRTY=true
 BULLETTRAIN_STATUS_EXIT_SHOW=true           # show exit code of last command
 
+
 ### Color changes by segment
 
 # Directory
-BULLETTRAIN_DIR_FG=black
-BULLETTRAIN_DIR_BG=cyan
+BULLETTRAIN_DIR_FG=magenta
+BULLETTRAIN_DIR_BG=black
+
+## ❕ DIRECTORY notes !
+# Currently, dir display is implemented in a hacky way!
+# short dir (just currenty dirname) is implemented in 'custom message'
+# dir verbosity level=1 is hardcoded in, around line 706 in theme - uses BULLETTRAIN_DIR_FG as color
+# This will prob need some editing later, but right now it looks okay to me. I wanted verbosity level 1 on another line.
 
 # Time
 BULLETTRAIN_TIME_BG=black
@@ -93,7 +102,7 @@ BULLETTRAIN_TIME_FG=green
 # BULLETTRAIN_TIME_BG=white
 # BULLETTRAIN_TIME_FG=black
 
-# Contect (Annie@MBP)
+# Context (Annie@MBP)
 BULLETTRAIN_CONTEXT_BG=white
 BULLETTRAIN_CONTEXT_FG=black
 
@@ -101,16 +110,20 @@ BULLETTRAIN_CONTEXT_FG=black
 BULLETTRAIN_EXEC_TIME_BG=black
 BULLETTRAIN_EXEC_TIME_FG=yellow
 
+# Custom segment - Display Directory Level 0
+BULLETTRAIN_CUSTOM_MSG=$'📂 %B%1~%b'
+BULLETTRAIN_CUSTOM_FG=black
+BULLETTRAIN_CUSTOM_BG=cyan
+
 # 05/2025 workaround for bullet-train issue displaying git status
 # https://github.com/ohmyzsh/ohmyzsh/issues/12328
 zstyle ':omz:alpha:lib:git' async-prompt no 
 
 # Time-last ordering
 BULLETTRAIN_PROMPT_ORDER=(
-  custom
   status
   context
-  dir
+  custom
   screen
   virtualenv
   nvm
@@ -124,6 +137,7 @@ BULLETTRAIN_PROMPT_ORDER=(
   git
   time
   cmd_exec_time
+  # dir
 )
 
 # "Agnoster"-like ordering (another theme) - Time first
