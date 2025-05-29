@@ -42,7 +42,10 @@ git clone git@github.com:acschwartz/dotfiles.git ~/dev/dotfiles
 cd ~/dev/dotfiles
 ```
 
+### 🔥 Important
 ⚠️ Execute all `stow` commands from **repo root** directory!
+
+⚠️ Only run `stow` on the directories in the dotfiles folder and not the individual files.
 
 ### 🔗 Setup Symlinks
 Symlink the dotfiles in the named packages (of this repo) to your home folder:
@@ -109,7 +112,9 @@ Why?
 
 
 ### 📖 Basic Stow Commands
-Run them **from the top level** of the dotfiles repo.
+* Only run Stow on the directories in the dotfiles folder and not the individual files.
+* Run commands **from the top level** of the dotfiles repo.
+
 ```zsh
 stow <folder>        # 🔗 Link all files in <folder> to target dir (defaults to ~)
 stow -D <folder>     # ⛓️‍💥 Unlink (i.e., "delete") the symlinks for <folder>
