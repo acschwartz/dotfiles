@@ -97,7 +97,8 @@ BULLETTRAIN_DIR_BG=black
 
 # Time
 BULLETTRAIN_TIME_BG=black
-BULLETTRAIN_TIME_FG=green
+BULLETTRAIN_TIME_FG=red
+BULLETTRAIN_DATE_FG=green
 # time: black-on-white
 # BULLETTRAIN_TIME_BG=white
 # BULLETTRAIN_TIME_FG=black
@@ -116,9 +117,12 @@ BULLETTRAIN_CUSTOM_FG=black
 BULLETTRAIN_CUSTOM_BG=cyan
 update_bullettrain_custom_msg() {
   if [[ "$PWD" == "$HOME" ]]; then
-    BULLETTRAIN_CUSTOM_MSG=$'🏠 You are home (~)'
+    BULLETTRAIN_CUSTOM_MSG=$'🏠 $HOME'
+    # BULLETTRAIN_PREPROMPT_DIR_DISPLAY="$NEWLINE gay"
+    BULLETTRAIN_PREPROMPT_DIR_DISPLAY="fuck you"
   else
     BULLETTRAIN_CUSTOM_MSG=$'📂 %B%1~%b'
+    BULLETTRAIN_PREPROMPT_DIR_DISPLAY="$NEWLINE%{$fg[$BULLETTRAIN_DIR_FG]%}%4(c:...:)%3c"
   fi
 }
 precmd_functions+=(update_bullettrain_custom_msg)

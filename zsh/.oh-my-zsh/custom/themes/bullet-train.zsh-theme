@@ -415,7 +415,7 @@ precmd() {
 }
 
 prompt_cmd_exec_time() {
-  [ $BULLETTRAIN_last_exec_duration -gt $BULLETTRAIN_EXEC_TIME_ELAPSED ] && prompt_segment $BULLETTRAIN_EXEC_TIME_BG $BULLETTRAIN_EXEC_TIME_FG " $(displaytime $BULLETTRAIN_last_exec_duration)"
+  [ $BULLETTRAIN_last_exec_duration -gt $BULLETTRAIN_EXEC_TIME_ELAPSED ] && prompt_segment $BULLETTRAIN_EXEC_TIME_BG $BULLETTRAIN_EXEC_TIME_FG "  $(displaytime $BULLETTRAIN_last_exec_duration)"
 }
 
 # Custom
@@ -628,8 +628,10 @@ prompt_time() {
     # prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG %D{%r}           # original
     # prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG '%D{%L:%M %p}'     # my customization: 3:25 PM
     # XC_DAY_TIME_12_HR_WITH_AMPM="%D{%L:%M %p, %a %b %d}"  # output:  2:41 PM, Mon May 26
-    TIME_12HR='%B%D{⌚️ %L:%M}%b'     # my customization: 3:25 PM
-    prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG $TIME_12HR   # my customization
+    TIME_12HR='%B%D{⌚️ %L:%M}%b'              # my customization: 3:25 PM
+    DAY_DATE="%{$fg[$BULLETTRAIN_DATE_FG]%}%D{%a %b %d}"    # my customization: Thu May 29
+    TIME_STRING=" $DAY_DATE  $TIME_12HR"
+    prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG $TIME_STRING   # my customization
   else
     # prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG %D{%T}      # original
     prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG '⌚️ %D{%T}'   # my customization
@@ -702,8 +704,9 @@ build_prompt() {
 NEWLINE='
 '
 
-# PROMPT=''  # Backup: original code
-PROMPT="$NEWLINE%{$fg[$BULLETTRAIN_DIR_FG]%}%4(c:...:)%3c"    # My addition -adds dir aboce prompt at verbosity level 1
+PROMPT=''  # Backup: original code
+# PROMPT="$NEWLINE%{$fg[$BULLETTRAIN_DIR_FG]%}%4(c:...:)%3c"    # My addition -adds dir aboce prompt at verbosity level 1
+
 [[ $BULLETTRAIN_PROMPT_ADD_NEWLINE == true ]] && PROMPT="$PROMPT$NEWLINE"
 PROMPT="$PROMPT"'%{%f%b%k%}$(build_prompt)'
 [[ $BULLETTRAIN_PROMPT_SEPARATE_LINE == true ]] && PROMPT="$PROMPT$NEWLINE"
