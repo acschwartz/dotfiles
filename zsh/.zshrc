@@ -111,9 +111,17 @@ BULLETTRAIN_EXEC_TIME_BG=black
 BULLETTRAIN_EXEC_TIME_FG=yellow
 
 # Custom segment - Display Directory Level 0
-BULLETTRAIN_CUSTOM_MSG=$'📂 %B%1~%b'
+# BULLETTRAIN_CUSTOM_MSG=$'📂 %B%1~%b'
 BULLETTRAIN_CUSTOM_FG=black
 BULLETTRAIN_CUSTOM_BG=cyan
+update_bullettrain_custom_msg() {
+  if [[ "$PWD" == "$HOME" ]]; then
+    BULLETTRAIN_CUSTOM_MSG=$'🏠 You are home (~)'
+  else
+    BULLETTRAIN_CUSTOM_MSG=$'📂 %B%1~%b'
+  fi
+}
+precmd_functions+=(update_bullettrain_custom_msg)
 
 # 05/2025 workaround for bullet-train issue displaying git status
 # https://github.com/ohmyzsh/ohmyzsh/issues/12328
