@@ -1,0 +1,69 @@
+{
+    // VSCode GLOBAL Settings
+    
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "editor.fontFamily": "'Geist Mono Nerd Font', 'Source Code Pro Nerd Font',  '0xProto Nerd Font', 'Martian Mono Nerd Font', 'JetBrains Mono Nerd Font', Menlo, Monaco, 'SF Mono Powerline',  'Courier New', monospace",
+    "colorize.include": [
+
+        "**/*.css",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.less",
+        "**/*.styl",
+        "**/*.json"
+    ],
+
+    // Terminal recolor: "Mellow"
+    // "workbench.colorCustomizations": {
+    //     "terminal.foreground": "#c9c7cd",
+    //     "terminal.background": "#161617",
+    //     "terminal.ansiBlack": "#27272a",
+    //     "terminal.ansiBlue": "#aca1cf",
+    //     "terminal.ansiCyan": "#ea83a5",
+    //     "terminal.ansiGreen": "#90b99f",
+    //     "terminal.ansiMagenta": "#e29eca",
+    //     "terminal.ansiRed": "#f5a191",
+    //     "terminal.ansiWhite": "#c1c0d4",
+    //     "terminal.ansiYellow": "#e6b99d",
+    //     "terminal.ansiBrightBlack": "#353539",
+    //     "terminal.ansiBrightBlue": "#b9aeda",
+    //     "terminal.ansiBrightCyan": "#f591b2",
+    //     "terminal.ansiBrightGreen": "#9dc6ac",
+    //     "terminal.ansiBrightMagenta": "#ecaad6",
+    //     "terminal.ansiBrightRed": "#ffae9f",
+    //     "terminal.ansiBrightWhite": "#cac9dd",
+    //     "terminal.ansiBrightYellow": "#f0c5a9",
+    //     "terminal.selectionBackground": "#2a2a2d",
+    //     "terminalCursor.background": "#161617",
+    //     "terminalCursor.foreground": "#cac9dd"
+    // },
+
+    // Terminal recolor: "Fairy Floss"
+    "workbench.colorCustomizations": {
+        "terminal.foreground": "#f8f8f2",
+        "terminal.background":  "#4F4B66", //"#5a5475",
+        "terminal.ansiBlack": "#040303",
+        "terminal.ansiBlue": "#c2ffdf",
+        "terminal.ansiCyan": "#c5a3ff",
+        "terminal.ansiGreen": "#c2ffdf",
+        "terminal.ansiMagenta": "#ffb8d1",
+        "terminal.ansiRed": "#f92672",
+        "terminal.ansiWhite": "#f8f8f0",
+        "terminal.ansiYellow": "#e6c000",
+        "terminal.ansiBrightBlack": "#6090cb",
+        "terminal.ansiBrightBlue": "#c2ffdf",
+        "terminal.ansiBrightCyan": "#c5a3ff",
+        "terminal.ansiBrightGreen": "#c2ffdf",
+        "terminal.ansiBrightMagenta": "#ffb8d1",
+        "terminal.ansiBrightRed": "#ff857f",
+        "terminal.ansiBrightWhite": "#f8f8f0",
+        "terminal.ansiBrightYellow": "#ffea00",
+        "terminal.selectionBackground": "#8077a8",
+        "terminalCursor.background": "#060709",
+        "terminalCursor.foreground": "#f8f8f0"
+    },
+    "workbench.colorTheme": "DuoTone Dark Forest",
+    "workbench.iconTheme": "vscode-celestial-magic-girl-icon-theme"
+
+}

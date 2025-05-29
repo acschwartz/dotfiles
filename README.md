@@ -21,9 +21,16 @@ Annie's personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/s
 - [ ] 🐚 `zsh`
     - [x] basics: `.zprofile`, `.zshrc`
     - [ ] link disparate files in `zsh/` to `.zshrc`
+- [ ] 🎨 Oh My Zsh theme
+    - [ ] fix: directory display in Bullet Train theme
 - [ ] 🎭 shell [aliases](https://github.com/driesvints/dotfiles?tab=readme-ov-file#your-own-dotfiles) 
     - [x] create `zsh/.alias`
     - [ ] fill it in - [ideas](https://github.com/driesvints/dotfiles/blob/main/aliases.zsh)
+- [ ] 🧬 VSCode
+    - [x] global `settings.json`
+    - [x] local `settings.json` for this repo/workspace
+    - [ ] ❓ extensions
+        - [] ❓ figure out why uninstalled extensions are still in my folder 😠
 - [ ] 🍺 `brew` (Homebrew packages (?) and [Brewfile](https://github.com/jbranchaud/til/blob/master/brew/export-list-of-everything-installed-by-brew.md))  
 - [ ] 🐍 Python (`pip` configs, `virtualenvwrapper`, etc.)  
 - [ ] 📜 Useful Scripts
