@@ -189,20 +189,8 @@ plugins=(
     #    ⭐️ `cd ` + tab
     # Docs: https://github.com/mrjohannchang/zsh-interactive-cd 
 
-    fzf # adds keybindings too? 
-
-    alias-finder
-    # Makes learning new aliases easier.
-    # Searches the defined aliases and outputs any that match the command inputted.
-    # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/alias-finder
-
-    command-not-found
-    # Suggested packages to be installed if a command cannot be found using
-    # (command-not-found package for zsh).
-
-    safe-paste
-    # Prevents any code from actually running while pasting, so you have a chance
-    # to review what was actually pasted before running it.
+    fzf
+    # adds keybindings too? 
 
     copypath
     # Copies the path of given directory or file to the system clipboard.
@@ -213,8 +201,6 @@ plugins=(
     copyfile
     # Puts the contents of a file in your system clipboard so you can paste it anywhere.
     # Usage:  ⭐️ copyfile <filename>        copies the contents of the file named filename.
-
-    colored-man-pages
     
     web-search
     # Launch a websearch (in browser) from the terminal
@@ -233,17 +219,40 @@ plugins=(
     #  ⭐️ gi [TEMPLATENAME]      show git-ignore output on the command line.
     #  ⭐️ gi [TEMPLATENAME] >> .gitignore
         # Append programming language settings to your projects .gitignore.
+    
+
+    zsh-bat
+    # Replaces the `cat` command with `bat`, which returns an output with syntax highlighting and Git integration.
+    # (requires `bat` to be installed)
+    # use `rcat` for regular `cat`
+
+    zsh-autosuggestions
+    # Suggests commands as you type based on history and completions.
+    # ⚙️ Config: https://github.com/zsh-users/zsh-autosuggestions?tab=readme-ov-file#configuration
+    # Usage:
+    #  ⭐️ press → key (`forward-char`` widget) or End (end-of-line widget) accept entire suggestion
+    #  ⭐️ prew `Esc f` (`forward-word` widget) to partially accept the suggestion up to the point that the cursor moves to.
+
+    zsh-syntax-highlighting
+
+    alias-finder
+    # Makes learning new aliases easier.
+    # Searches the defined aliases and outputs any that match the command inputted.
+    # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/alias-finder
+
+    command-not-found
+    # Suggested packages to be installed if a command cannot be found using
+    # (command-not-found package for zsh).
+
+    safe-paste
+    # Prevents any code from actually running while pasting, so you have a chance
+    # to review what was actually pasted before running it.
 
 
     ### Aliases
     common-aliases
     brew
     git
-
-    ### 🍺 Homebrew-installed (litsed as FYI)
-    ## note: could re-install into custom plugin folder if feel so inclined...
-    # zsh-syntax-highlighting
-    # zsh-autosuggestions
 
     )
 
@@ -254,6 +263,7 @@ plugins=(
 #       see also: competing projects - def need a cheat sheet tho
 # tldr # adds `tldr` to front of the command you are typing (but haven't sent)
 # man  # adds `man` to front of the command you are typing (but haven't sent)
+# extract - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract
 # autoenv - automatically activate virtual environments
 # git-commit - styler for commits - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-commit
 # jsontools - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jsontools
@@ -340,10 +350,6 @@ zstyle ':omz:plugins:alias-finder' autoload yes
 # ==============================================================================
 # ⚡️ Starts Oh My Zsh — applies theme, plugins, and settings
 source $ZSH/oh-my-zsh.sh
-
-# 🍺 Activate Homebrew-installed OMZ plugins
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
 # ==============================================================================
