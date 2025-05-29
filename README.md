@@ -150,17 +150,20 @@ This repo includes a `.stowrc` file to define default flags for every Stow comma
 ### 🛑 Stow Ignore Files
 Stow uses **Perl-style regex** in its ignore files.
 
-#### 📦 `.stow-local-ignore`
+#### 📦 Package-level ignores
+- `.stow-local-ignore`
 - Put in **package folder** to ignore files *in that package only*.  
 - 🚫 Won’t work from repo root — must be inside the package.
 
-#### 🏠 `.stow-global-ignore`
+#### 🏠 Global (machine-level) ignores
+- `.stow-global-ignore`
 - Put in **`~` (home dir)** to ignore files/folders *across all packages* on your machine.  
 - 🚫 Won’t work from repo or elsewhere — must be at `~`.
 
 #### 📁 Repo-level ignores
-- Neither `.stow-local-ignore` nor `.stow-global-ignore` apply here.
-- Set `.stowrc` `--ignore` flags in the **repo root** to ignore files/packages across the repo.  
+- `.stowrc`
+- Set **`.stowrc`** `--ignore` flags in the **repo root** to ignore files/packages across the repo.
+- *(🧙✋🏻 `.stow-local-ignore` and `.stow-global-ignore` no power here!)*
 
 
 
