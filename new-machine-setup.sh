@@ -41,6 +41,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # FYI - Unsure what to do with curl exactly yet (in this script)
 # Read https://www.joyfulbikeshedding.com/blog/2020-05-11-best-practices-when-using-curl-in-shell-scripts.html
 
+# [x] Install External OMZ Plugins
+brew install zsh-syntax-highlighting
+brew install zsh-autosuggestions
+# they should already be properly sourced in my .zshrc
+
 # ---------------------------------------------------
 
 # [ ] Import zsh settings, profile, plugs, etc.

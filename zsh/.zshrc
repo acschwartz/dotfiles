@@ -189,6 +189,8 @@ plugins=(
     #    ⭐️ `cd ` + tab
     # Docs: https://github.com/mrjohannchang/zsh-interactive-cd 
 
+    fzf # adds keybindings too? 
+
     alias-finder
     # Makes learning new aliases easier.
     # Searches the defined aliases and outputs any that match the command inputted.
@@ -211,6 +213,8 @@ plugins=(
     copyfile
     # Puts the contents of a file in your system clipboard so you can paste it anywhere.
     # Usage:  ⭐️ copyfile <filename>        copies the contents of the file named filename.
+
+    colored-man-pages
     
     web-search
     # Launch a websearch (in browser) from the terminal
@@ -235,10 +239,17 @@ plugins=(
     common-aliases
     brew
     git
+
+    ### 🍺 Homebrew-installed (litsed as FYI)
+    ## note: could re-install into custom plugin folder if feel so inclined...
+    # zsh-syntax-highlighting
+    # zsh-autosuggestions
+
     )
 
 
 # Plugs I don't need yet, but will!
+# colorize
 # tldr --> https://github.com/tldr-pages/tldr, https://tldr.sh/ 
 #       see also: competing projects - def need a cheat sheet tho
 # tldr # adds `tldr` to front of the command you are typing (but haven't sent)
@@ -327,8 +338,12 @@ zstyle ':omz:plugins:alias-finder' autoload yes
 # ==============================================================================
 # =                  🚀  Initialize Oh My Zsh !                                =
 # ==============================================================================
-# Starts Oh My Zsh — applies theme, plugins, and settings
+# ⚡️ Starts Oh My Zsh — applies theme, plugins, and settings
 source $ZSH/oh-my-zsh.sh
+
+# 🍺 Activate Homebrew-installed OMZ plugins
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
 # ==============================================================================
