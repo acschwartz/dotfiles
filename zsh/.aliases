@@ -33,6 +33,10 @@ alias lo="ls -1"
 ## 🐙 Git
 alias unstage="git restore --staged ."
 alias gs="git status"
+alias gst=""    # overwrite plugin alias to train myself out of using it
+#alias gst="git stash"
+alias gcm="git commit -m"
+alias gpp="git pull && git push"
 
 ## 🍏🌈 Neofetch
 alias neo="neofetch"
