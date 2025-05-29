@@ -229,7 +229,7 @@ dtrace: failed to execute stow: Operation not permitted
 
 The above shows:
 
-* ✅ You’re using GNU Stow (2.4.1).
+* ✅ Using GNU Stow (2.4.1).
 * ✅ $HOME is correctly set to /Users/annie.
 * ✅ Manual symlinking works as expected.
 * ✅ Stow believes it’s creating the link (LINK: .gitconfig => dotfiles/git/.gitconfig).
