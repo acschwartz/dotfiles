@@ -163,7 +163,7 @@ Stow uses **Perl-style regex** in its ignore files.
 #### 📁 Repo-level ignores
 - `.stowrc`
 - Set **`.stowrc`** `--ignore` flags in the **repo root** to ignore files/packages across the repo.
-- *(🧙✋🏻 `.stow-local-ignore` and `.stow-global-ignore` no power here!)*
+- *(🧙✋🏻 `.stow-local-ignore` and `.stow-global-ignore` have no power here!)*
 
 
 
