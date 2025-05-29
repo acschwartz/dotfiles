@@ -175,7 +175,7 @@ Stow uses **Perl-style regex** in its ignore files.
 * ❌ On macOS, `stow` appeared to work on dotfiles, but actually failed to create a symlink
 
 **Diagnosis**
-* 👉 System Integrity Protection (SIP) was preventing the operation
+* 👉 System Integrity Protection (SIP) was quietly preventing the operation
 
 **Solution**
 * ❗️ Must explicitly set `--target=~` to bypass SIP when linking SIP-protected files
