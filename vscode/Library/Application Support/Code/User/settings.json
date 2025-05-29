@@ -63,7 +63,7 @@
         "terminalCursor.background": "#060709",
         "terminalCursor.foreground": "#f8f8f0"
     },
-    "workbench.colorTheme": "DuoTone Dark Forest",
+    "workbench.colorTheme": "Digi-Angler Dark Theme",
     "workbench.iconTheme": "vscode-celestial-magic-girl-icon-theme"
 
 }
