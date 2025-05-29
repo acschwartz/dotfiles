@@ -30,12 +30,10 @@ Annie's personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/s
     - [x] global `settings.json`
     - [x] local `settings.json` for this repo/workspace
     - [ ] ❓ extensions
-        - [] ❓ figure out why uninstalled extensions are still in my folder 😠
+        - [ ] ❓ figure out why uninstalled extensions are still in my folder 😠
 - [ ] 🍺 `brew` (Homebrew packages (?) and [Brewfile](https://github.com/jbranchaud/til/blob/master/brew/export-list-of-everything-installed-by-brew.md))  
 - [ ] 🐍 Python (`pip` configs, `virtualenvwrapper`, etc.)  
 - [ ] 📜 Useful Scripts
-- [ ] `~/.stow-global-ignore`
-    - NOTE: this file lives in the **home folder** (`~`) and not at the repo root where I tried to place it 😫
 - [x] `~/.stow-local-ignore`
     - to ignore specific files when symlinking (e.g., README files or notes to self), use a `.stow-local-ignore` file in the 📦 **package** folder.
 
