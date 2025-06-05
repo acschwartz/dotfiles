@@ -71,6 +71,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/inst
 # [x] GitHub.com Config
 # I won't have to do this part again - just import!
 
+# [x] Git plugins
+brew install git-delta
+brew install less  # optional dependency of git-delta (paging)
+
 # ---------------------------------------------------
 
 # [x] Download VSCode
