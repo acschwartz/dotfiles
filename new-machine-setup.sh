@@ -81,9 +81,14 @@ brew install less  # optional dependency of git-delta (paging)
 
 # ---------------------------------------------------
 
-# [x] Download VSCode
+# [x] Install VSCode
 brew install visual-studio-code
 # TODO: reinstall VSCode extensions
+
+# ---------------------------------------------------
+
+# [x] Install developer tools
+brew install docker
 
 # ---------------------------------------------------
 
