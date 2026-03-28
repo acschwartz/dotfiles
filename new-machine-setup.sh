@@ -1,5 +1,5 @@
 # -------------------------------------------------
-#  .INCOMPLETE. WIP .
+# ⚠️ INCOMPLETE 🚧 WIP ⚠️
 # Beginnings of a New Machine setup script.
 # Keeping a note in Apple Notes to document MY process.
 # Building script as I go, in the order tasks are done.
@@ -21,7 +21,10 @@
 # ---------------------------------------------------
 
 
-# Begin Script ....
+# ===================================================
+#    BEGIN SCRIPT ...
+# ===================================================
+
 
 # ---------------------------------------------------
 #!/bin/bash
@@ -55,6 +58,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # ---------------------------------------------------
+
 
 # [x] Generate SSH keys (id_ed25519)
 # [x] for GitHub.com
@@ -113,3 +117,5 @@ killall Finder
 
 # Apply the settings
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+
+# ---------------------------------------------------
