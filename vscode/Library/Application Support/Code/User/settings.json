@@ -64,6 +64,21 @@
         "terminalCursor.foreground": "#f8f8f0"
     },
     "workbench.colorTheme": "Digi-Angler Dark Theme",
-    "workbench.iconTheme": "vscode-celestial-magic-girl-icon-theme"
+    "workbench.iconTheme": "vscode-celestial-magic-girl-icon-theme",
+    "editor.guides.bracketPairs": "active",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+
+    // "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "[javascript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "workbench.editor.empty.hint": "hidden",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "python.defaultInterpreterPath": "/usr/bin/python3"
 
 }
