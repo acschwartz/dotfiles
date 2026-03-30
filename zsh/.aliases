@@ -24,11 +24,19 @@
 # alias zshconfig="code ~/.zshrc"
 # alias ohmyzsh="code ~/.oh-my-zsh"
 
-## 🐚 Shell
+# ==============================================================================
+
+## 🐚 Shell (OhMyZsh)
 alias omzr="omz reload"     # Reload Zsh config without restarting the terminal.
 
 ## ⚡️ Shortcuts
 alias lo="ls -1"
+
+# ============================ 🐚 User Scripts =================================
+alias create-url=""
+
+
+# =============================  🐙 Git  =======================================
 
 ## 🐙 Git
 alias unstage="git restore --staged ."
@@ -41,19 +49,26 @@ alias gpp="git pull && git push"
 ## Gitignore.io OMZ plugin
 alias gitignore="gi"
 
-## 🐍 Python
+
+# ============================== 🐍 Python =====================================
 alias py="python"
 alias pip="pip3"
 alias python="python3"
 alias py3="python3"
 
 
-## 📁 Directories
-alias dev="cd $HOME/dev; ls -1"
-alias dotfiles="cd $HOME/dev/dotfiles; ls -1"
+# ============================ 📁 Directories ==================================
+## 🏠 Key Folders
+alias home="~"
+alias desktop="~/Desktop"
 
 ## ☁️ iCloud Folder
 alias ic="cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs; ls -1"
+alias icloud="ic"
+
+## 🧑‍💻 Dev Workspaces
+alias dev="cd $HOME/dev; ls -1"
+alias dotfiles="cd $HOME/dev/dotfiles; ls -1"
 
 ## 📁 PARA System
 alias para="echo $'\nPARA System'; cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs/PARA; ls -1; echo '' "
