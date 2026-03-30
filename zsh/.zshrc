@@ -273,10 +273,16 @@ plugins=(
 # ssh - provides hostname completion based off your ssh config
 # dirhistory - adds keyboard shortcuts for navigating directory history and hierarchy
 #              https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory
-# 
+
 
 # ========================= 🔌 Plugin Settings ==================================
 zstyle ':omz:plugins:alias-finder' autoload yes
+
+# command-not-found:
+HOMEBREW_COMMAND_NOT_FOUND_HANDLER="$(brew --repository)/Library/Homebrew/command-not-found/handler.sh"
+if [ -f "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER" ]; then
+  source "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER";
+fi
 
 
 # ======================== 📁 Custom Folder Path ================================
@@ -400,6 +406,8 @@ source ~/.aliases
 
 ## 🧱 Compilation Flags
 # export ARCHFLAGS="-arch $(uname -m)"
+
+
 
 
 # ========================= 🥊 Custom Functions =================================
