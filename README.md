@@ -1,41 +1,17 @@
-# dotfiles
+# ⚫️ dotfiles
 
 Annie's personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html).
 
-## 📖 Table of Contents
+## Table of Contents
 
-- [📝 TODO](#-todo)
-- [🚀 QuickStart](#-quickstart)
-- [📎 Details](#-details)
+- **[🚀 QuickStart](#-quickstart)**
+- [⚙️ Docs: Under the Hood](#-docs-under-the-hood)
   - [📦 Packages](#-packages)
   - [📖 Basic Stow Commands](#-basic-stow-commands)
   - [⚙️ .stowrc Defaults](#️-stowrc-defaults)
-- [🤯 Troubleshooting](#-troubleshooting)
+- [📓 Appendix: Troubleshooting Log](#-appendix-troubleshooting-log)
 - [✨ Appendix: Inspiration](#-appendix-inspiration)
-
----
-
-## 📝 TODO
-
-- [x] 🐙 `git`
-- [ ] 🐚 `zsh`
-  - [x] basics: `.zprofile`, `.zshrc`
-    - [ ] link disparate files in `zsh/` to `.zshrc`
-- [ ] 🎨 Oh My Zsh theme
-  - [ ] fix: directory display in Bullet Train theme
-- [ ] 🎭 shell [aliases](https://github.com/driesvints/dotfiles?tab=readme-ov-file#your-own-dotfiles)
-  - [x] create `zsh/.alias`
-    - [ ] fill it in - [ideas](https://github.com/driesvints/dotfiles/blob/main/aliases.zsh)
-- [ ] 🧬 VSCode
-  - [x] global `settings.json`
-    - [x] local `settings.json` for this repo/workspace
-    - [ ] ❓ extensions
-      - [ ] ❓ figure out why uninstalled extensions are still in my folder 😠
-- [ ] 🍺 `brew` (Homebrew packages (?) and [Brewfile](https://github.com/jbranchaud/til/blob/master/brew/export-list-of-everything-installed-by-brew.md))  
-- [ ] 🐍 Python (`pip` configs, `virtualenvwrapper`, etc.)  
-- [ ] 📜 Useful Scripts
-- [x] `~/.stow-local-ignore`
-  - to ignore specific files when symlinking (e.g., README files or notes to self), use a `.stow-local-ignore` file in the 📦 **package** folder.
+- [📝 To-Do's](#-todo)
 
 ---
 
@@ -43,44 +19,52 @@ Annie's personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/s
 
 ### 🔧 Setup
 
+#### 1. Install dependencies
+
+On a fresh machine, first install the Stow utility.
+
+- MacOS: `brew install stow`
+- Linux: `sudo apt-get install stow`
+
+#### 2. Clone this repo
+
 ```zsh
-brew install stow
 git clone git@github.com:acschwartz/dotfiles.git ~/dev/dotfiles
 cd ~/dev/dotfiles
 ```
 
-### ⚠️ Important
+#### ⚠️ Important Note (before you run any Stow commands)
 
-- Execute all `stow` commands from **repo root** directory!
-- Only run `stow` on the directories (packages) in the dotfiles folder and **not** the individual files.
+- Always execute all `stow` commands from **repo root** directory!
 
-### 🔗 Setup Symlinks
+#### 3. Run Stow to symlink the dotfiles
 
-Symlink the dotfiles in the named packages (of this repo) to your home folder:
+Stow is run on a per-package basis, as that is the purpose of Stow.
+Run the `stow` command to create symlinks from your home folder to this repo's packages.
 
 ```zsh
-stow zsh git nvim   # Example
+stow <package1> <package2> <package3>
 ```
 
-If a target file already exists in `~`, back it up first:
+e.g. `stow zsh git vscode`
+(Under-the-hood settings are managed within this repo in `.stowrc`, thus you can just run the command.)
+
+Use this command to run Stow on all packages: `ls -d */ 2>/dev/null | tr -d / | xargs stow`
+
+If a target file already exists in home folder, create a backup before symlinking, e.g.:
 
 ```zsh
 mv ~/.zshrc ~/.zshrc.backup
 stow zsh
 ```
 
-### 📝 Edit Dotfiles
+### How-To
 
-**Always edit dotfiles in the repo**, not in ~:
+#### 📝 Editing Your Dotfiles
 
-```zsh
-code ~/dev/dotfiles/zsh/.zshrc
-git commit -a
-```
+**Always edit dotfiles in the repo folder**, not in home folder (where dotfiles would traditionally live), and  ***don't forget to commit!*** 😎
 
-⚠️ ***Don't forget to commit!*** 😎
-
-### ➕ Add New Packages
+#### ➕ Adding New Packages to Repo
 
 ```zsh
 mkdir zsh
@@ -91,7 +75,7 @@ stow zsh
 
 ---
 
-## 📎 Details
+## 📖 Docs: Under the Hood
 
 🧰 [**GNU Stow**](https://www.gnu.org/software/stow/manual/stow.html) is a symlink manager — it helps you manage your [**dotfiles**](https://webpro.nl/articles/getting-started-with-dotfiles) by creating symbolic links from files in this repo to your home directory.
 
@@ -99,7 +83,7 @@ Instead of manually symlinking each config file, you organize your dotfiles into
 
 ### 📦 Packages
 
-Each folder is a Stow package.
+Each folder in the repo is a Stow package.
 
 For example:
 
@@ -111,7 +95,6 @@ nvim/   → ~/.config/nvim/init.lua
 
 Why?
 
-- It's how Stow works 😉
 - Avoids dumping all dotfiles into `~` at once
 - Lets you pick and choose only what you need on a new system
 
@@ -127,7 +110,7 @@ stow -n <folder>     # Preview what stow *would* do (no changes made)
 stow -v <folder>     # Verbose output (use -vv, -vvv for more detail)
 ```
 
-For troubleshooting, I recommend using:
+For troubleshooting, I like verbosity level 4:
 
 ```zsh
 stow --verbose=4 <folder>
@@ -171,81 +154,41 @@ Stow uses **Perl-style regex** in its ignore files.
 - Set **`.stowrc`** `--ignore` flags in the **repo root** to ignore files/packages across the repo.
 - *(🧙✋🏻 `.stow-local-ignore` and `.stow-global-ignore` have no power here!)*
 
-## 🤯 Troubleshooting
+---
 
-### Overview
+## 📓 Appendix: Troubleshooting Log
 
-#### Problem
-
-- ❌ On macOS, `stow` appeared to work on dotfiles, but actually failed to create a symlink
-
-#### Diagnosis
-
-- 👉 System Integrity Protection (SIP) was quietly preventing the operation
-
-#### Solution
-
-- ❗️ Must explicitly set `--target=~` to bypass SIP when linking SIP-protected files
-  - Even though `stow whatever` defaults to home folder as target, SIP blocks the operation
-    - Setting the target *explicitly* is the fix
-- ✅ Created `.stowrc` and added `--target=~` so you don’t have to type it every time
-
-#### Note
-
-- ⚠️ Stow fails silently when SIP blocks it — verbosity has no effect.
-- Stow works *as expected* with most files, even when the home folder is used as the default target & not explicitly invoked (tested & confirmed). It's specifically dotfiles/configs that are protected by the operating system in this case.
-
-### Troubleshooting Details
-
-#### Terminal Commands
-
-- `ll file` (alias for `ls -l file`)
-  - list file info, long version
-- `ln -s ~/dev/dotfiles/git/.gitconfig ~/.gitconfig`
-  - create symlink (manually)
-- `dtruss`
-  - 'see what Stow is actually doing under the hood'
-
-#### Troubleshooting Log
-
-This was prior to creation of `.stowrc`, so there are no default flags set beyond what is seen.
-
-```zsh
-➜  cd ~/dev/dotfiles
-➜  stow -D -v git
-UNLINK: .gitconfig
-➜  stow -v git
-LINK: .gitconfig => dotfiles/git/.gitconfig
-➜  ll ~/.gitconfig
-ls: /Users/annie/.gitconfig: No such file or directory
-➜  stat ~/.gitconfig
-stat: /Users/annie/.gitconfig: stat: No such file or directory
-➜  ln -s ~/dev/dotfiles/git/.gitconfig ~/.gitconfig
-➜  ll ~/.gitconfig
-lrwxr-xr-x  1 annie  staff  40 May 24 19:29 /Users/annie/.gitconfig -> /Users/annie/dev/dotfiles/git/.gitconfig
-➜  rm ~/.gitconfig
-➜  ll ~/.gitconfig
-ls: /Users/annie/.gitconfig: No such file or directory
-➜  stow --version    
-stow (GNU Stow) version 2.4.1
-➜  echo $HOME
-/Users/annie
-➜  sudo dtruss stow -v  git
-dtrace: system integrity protection is on, some features will not be available
-dtrace: failed to execute stow: Operation not permitted
-```
-
-The above shows:
-
-- ✅ Using GNU Stow (2.4.1).
-- ✅ $HOME is correctly set to /Users/annie.
-- ✅ Manual symlinking works as expected.
-- ✅ Stow believes it’s creating the link (LINK: .gitconfig => dotfiles/git/.gitconfig).
-- ❌ After running Stow, the symlink does not appear.
-- ❗️ `dtrace` identifies Stow failed due to System Integrity Protection
+[Moved to own file!](reference-troubleshooting.md)
 
 ---
 
 ## ✨ Appendix: Inspiration
 
 [Moved to own file!](dotfile-inspo.md)
+
+---
+
+## 📝 TODO
+
+- [x] 🐙 `git`
+- [ ] 🐚 `zsh`
+  - [x] basics: `.zprofile`, `.zshrc`
+    - [ ] link disparate files in `zsh/` to `.zshrc`
+- [ ] 🎨 Oh My Zsh theme
+  - [ ] fix: directory display in Bullet Train theme
+  - [ ] fix: ⚠️ OhMyZsh no longer updating (2026); broken aliases ??
+- [ ] 🎭 shell [aliases](https://github.com/driesvints/dotfiles?tab=readme-ov-file#your-own-dotfiles)
+  - [x] create `zsh/.alias`
+    - [ ] fill it in - [ideas](https://github.com/driesvints/dotfiles/blob/main/aliases.zsh)
+- [ ] 🧬 VSCode
+  - [x] global `settings.json`
+    - [x] local `settings.json` for this repo/workspace
+    - [ ] ❓ extensions
+      - [ ] ❓ figure out why uninstalled extensions are still in my folder 😠
+- [ ] 🍺 `brew` (Homebrew packages (?) and [Brewfile](https://github.com/jbranchaud/til/blob/master/brew/export-list-of-everything-installed-by-brew.md))  
+- [ ] 🐍 Python (`pip` configs, `virtualenvwrapper`, etc.)  
+- [ ] 📜 Useful Scripts
+- [x] `~/.stow-local-ignore`
+  - to ignore specific files when symlinking (e.g., README files or notes to self), use a `.stow-local-ignore` file in the 📦 **package** folder.
+- [ ] ⚠️ Stow: Consider moving Stow setup from repo root to a Stow subfolder, which would allow creation of folders other than Stow packages in the repo. (With current setup, all subdirectories of the repo must be stow packages)
+
