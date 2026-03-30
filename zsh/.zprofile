@@ -30,6 +30,10 @@
 # =                           🧙‍♂️ Config                                        =
 # ==============================================================================
 
+## 🐚 User Shell Scripts
+# User shell scripts go in the `~/bin` folder, and are useable by your user account
+export PATH=~/bin:$PATH
+
 ## 🍺 Homebrew (brew)
 # Set up Homebrew environment (Apple Silicon installs to /opt/homebrew)
 #   - adds Homebrew’s binary directory to PATH
