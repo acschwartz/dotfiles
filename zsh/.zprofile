@@ -33,7 +33,7 @@
 ## 🐚 User Shell Scripts
 # User shell scripts go in the `~/bin` folder
 # This allows them to be used from any directory in your user account
-export PATH="~/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 ## 🍺 Homebrew (brew)
 # Set up Homebrew environment (Apple Silicon installs to /opt/homebrew)
