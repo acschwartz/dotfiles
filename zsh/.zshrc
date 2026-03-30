@@ -29,11 +29,22 @@
 # ______________________________________________________________________________
 
 # ==============================================================================
+# =                    1️⃣  Execute  First                                       =
+# ==============================================================================
+
+# ===================== 🍏🌈 Neofetch ===========================================
+# Run neofetch (bc it's pretty!) fist thing on launch (so any Zsh mgs show up after)
+# Only runs neofetch if it is installed on this machine
+echo
+if command -v neofetch >/dev/null 2>&1; then
+    neofetch
+fi
+
+# ==============================================================================
 # =                  🐚  Zsh Core Environment                                  =
 # ==============================================================================
 # This env var contains the path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
 
 # ==============================================================================
 # =                   🔮  Oh My Zsh Configs                                    =

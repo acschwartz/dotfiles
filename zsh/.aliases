@@ -38,9 +38,6 @@ alias gst=""    # overwrite plugin alias to train myself out of using it
 alias gcm="git commit -m"
 alias gpp="git pull && git push"
 
-## 🍏🌈 Neofetch
-alias neo="neofetch"
-
 ## Gitignore.io OMZ plugin
 alias gitignore="gi"
 
@@ -79,7 +76,7 @@ echo $'\nResources\n' ;
 ls -1 ;
 echo $'\n' "
 
-alias para-aa="para;
+alias para-arch="para;
 cd 4\ 🗄️\ Archive/ ;
 echo $'\nArchive\n' ;
 ls -1 ;
