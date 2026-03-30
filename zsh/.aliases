@@ -59,8 +59,8 @@ alias py3="python3"
 
 # ============================ 📁 Directories ==================================
 ## 🏠 Key Folders
-alias home="~"
-alias desktop="~/Desktop"
+alias home="$HOME"
+alias desktop="$HOME/Desktop"
 
 ## ☁️ iCloud Folder
 alias ic="cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs; ls -1"
