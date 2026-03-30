@@ -49,6 +49,15 @@ stow <package1> <package2> <package3>
 e.g. `stow zsh git vscode`
 (Under-the-hood settings are managed within this repo in `.stowrc`, thus you can just run the command.)
 
+**⚠️ If Stow produces no output, it didn't work !!**
+
+Output should look like this:
+
+```zsh
+$ stow bin    
+LINK: bin => dev/dotfiles/bin/bin
+```
+
 Use this command to run Stow on all packages: `ls -d */ 2>/dev/null | tr -d / | xargs stow`
 
 If a target file already exists in home folder, create a backup before symlinking, e.g.:
@@ -57,6 +66,7 @@ If a target file already exists in home folder, create a backup before symlinkin
 mv ~/.zshrc ~/.zshrc.backup
 stow zsh
 ```
+
 
 ### How-To
 
