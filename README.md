@@ -10,7 +10,8 @@ Annie's personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/s
   - [📖 Basic Stow Commands](#-basic-stow-commands)
   - [⚙️ .stowrc Defaults](#️-stowrc-defaults)
 - [📓 Appendix: Troubleshooting Log](#-appendix-troubleshooting-log)
-- [✨ Appendix: Inspiration](#-appendix-inspiration)
+- [✨ Appendix: Dotfile Inspiration](#-appendix-dotfile-inspiration)
+- [🌐 Appendix: External Docs & Links](#-appendix-external-docs--links)
 - [📝 To-Do's](#-todo)
 
 ---
@@ -172,9 +173,16 @@ Stow uses **Perl-style regex** in its ignore files.
 
 ---
 
-## ✨ Appendix: Inspiration
+## ✨ Appendix: Dotfile Inspiration
 
 [Moved to own file!](dotfile-inspo.md)
+
+---
+
+## 🌐 Appendix: External Docs & Links
+
+- [Docs: GNU Stow Manual](https://www.gnu.org/software/stow/manual/)
+- **[Terminal Cheat Sheet](https://github.com/0nn0/terminal-mac-cheatsheet?tab=readme-ov-file#english-version)**
 
 ---
 
@@ -197,6 +205,7 @@ Stow uses **Perl-style regex** in its ignore files.
       - [ ] ❓ figure out why uninstalled extensions are still in my folder 😠
 - [ ] 🍺 `brew` (Homebrew packages (?) and [Brewfile](https://github.com/jbranchaud/til/blob/master/brew/export-list-of-everything-installed-by-brew.md))  
 - [ ] 🐍 Python (`pip` configs, `virtualenvwrapper`, etc.)  
+- [x] 🐚 User Scripts
 - [ ] 📜 Useful Scripts
 - [x] `~/.stow-local-ignore`
   - to ignore specific files when symlinking (e.g., README files or notes to self), use a `.stow-local-ignore` file in the 📦 **package** folder.
